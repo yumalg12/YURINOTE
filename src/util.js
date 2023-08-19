@@ -1,8 +1,8 @@
-import emotion1 from "./img/emotion1.png";
-import emotion2 from "./img/emotion2.png";
-import emotion3 from "./img/emotion3.png";
-import emotion4 from "./img/emotion4.png";
-import emotion5 from "./img/emotion5.png";
+import emotion1 from "./img/emotion1.svg";
+import emotion2 from "./img/emotion2.svg";
+import emotion3 from "./img/emotion3.svg";
+import emotion4 from "./img/emotion4.svg";
+import emotion5 from "./img/emotion5.svg";
 
   export const getEmotionImgById = (emotionId) => {
     const targetEmotionId = String(emotionId);
@@ -22,6 +22,33 @@ import emotion5 from "./img/emotion5.png";
     }
   };
 
+  export const emotionList = [
+    {
+      id: 1,
+      name: "매우 좋음",
+      img: getEmotionImgById(1),
+    },
+    {
+      id: 2,
+      name: "좋음",
+      img: getEmotionImgById(2),
+    },
+    {
+      id: 3,
+      name: "평이함",
+      img: getEmotionImgById(3),
+    },
+    {
+      id: 4,
+      name: "나쁨",
+      img: getEmotionImgById(4),
+    },
+    {
+      id: 5,
+      name: "매우 나쁨",
+      img: getEmotionImgById(5),
+    },
+  ]
 
   export const getFormattedDate = (targetDate) => {
     let year = targetDate.getFullYear();

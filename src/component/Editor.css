@@ -1,3 +1,15 @@
-.Editor{
-    
+.editor_section{
+    padding: 0 3rem;
+}
+
+textarea {
+    width: 90%;
+    text-align: center;
+    resize: vertical;
+}
+
+.emotion_list_wrapper{
+    display: flex;
+    justify-content: space-around;
+    gap:5px;
 }
