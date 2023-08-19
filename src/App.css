@@ -3,7 +3,7 @@
 .App {
   font-family: 'Single Day', cursive;
   text-align: center;
-  background-color: rgb(254, 255, 255);
+  background-color: rgb(254, 254, 255);
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
@@ -13,16 +13,51 @@
 }
 
 .TempMenus{
-  background: #4147d5;
+  background: #D7E0FF;
   display: flex;
   justify-content: space-evenly;
-  padding: 0rem 6rem;
+  padding: 0.1rem 6rem 0rem 6rem;
+  border-bottom: 1px solid #4147D5;
 }
 
 .TempMenus a{
-  color:#D7E0FF;
+  color:#4147d5;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.TempMenus span{
+  color:#4147d5;
+  font-size: 0.6em;
+  margin-top: 3px;
 }
 
 .TempMenus a:hover{
   filter: brightness(120%) saturate(120%);
+}
+
+input, select, textarea {
+  padding: 0.3rem 0.8rem;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1rem;
+}
+
+textarea{
+  padding: 0.8rem;
+  line-height: 1.6;
+}
+
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  box-shadow: 0px 0px 0px 5px #d7e0ff9e;
+  outline: none;
+}
+
+h4{
+  margin-block-end: 0.5em;
+  margin-inline-end: 5px;
+  padding-bottom: 3px;
+  filter: hue-rotate(260deg);
+  border-bottom: 1px solid #dedede;
 }

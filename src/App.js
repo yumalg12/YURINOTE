@@ -10,8 +10,11 @@ function App() {
     <div className="App">
       <div className="TempMenus">
         <Link to={"/"}>Home </Link>
+        <span>/</span>
         <Link to={"/new"}>New </Link>
+        <span>/</span>
         <Link to={"/diary"}>Diary </Link>
+        <span>/</span>
         <Link to={"/edit"}>Edit</Link>
       </div>
       <Routes>
