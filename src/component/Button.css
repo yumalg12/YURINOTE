@@ -1,0 +1,32 @@
+.Button{
+    cursor: pointer;
+    border: none;
+    border-radius: 10rem;
+    padding: 4px 20px;
+    font-family: 'Single Day', cursive;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.Button:hover{
+    filter: brightness(105%) saturate(105%);
+}
+
+.Button_default { 
+    background-color: #ece;
+    border: 1px solid #ece;
+    color:#4147D5;
+}
+
+.Button_positive {
+    background-color: white;
+    border: 1px solid #4147D5;
+    color: #4147D5;
+}
+
+.Button_negative {
+    background-color: #4147D5;
+    border: 1px solid white;
+    color: white;
+}
