@@ -13,3 +13,11 @@ textarea {
     justify-content: space-around;
     gap:5px;
 }
+
+.button_section{
+    margin: 2rem 0;
+}
+
+.button_section button{
+    font-size: 1.3rem;
+}

@@ -9,25 +9,31 @@ const Home = () => {
     console.log(searchParams.get("sort"));
     return <div>
         <Header
-              title={
+            title={"데일리 다이어리"}
+            leftChild={
                 <>
                 <img src={logo} alt="로고" width={30} style={{ margin: '0 0.5rem' }} />
-                내 일기장
-                <img src={logo} alt="로고" width={30} style={{ margin: '0 0.5rem' }} />
-                </>
-              }
-            leftChild={
                 <Button text={"긍정"} type="positive" onClick={() => {alert("Positive");}}/>
+                </>
             }
             rightChild={
+                <>
                 <Button text={"부정"} type="negative" onClick={() => {alert("Negative");}}/>
+                <img src={logo} alt="로고" width={30} style={{ margin: '0 0.5rem' }} />
+                </>
             }
             >
                 
         </Header>
-        <Editor onSubmit={() => {
-        alert("작성완료");
-    }}/>
+
+        <Editor 
+        initData={{
+            date: new Date().getTime(),
+            emotionId: 3,
+            content: "",
+        }}
+        onSubmit={() => {alert("작성완료");}}
+        />
     </div>;
 };
 

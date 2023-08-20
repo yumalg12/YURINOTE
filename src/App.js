@@ -16,6 +16,8 @@ function App() {
         <Link to={"/diary"}>Diary </Link>
         <span>/</span>
         <Link to={"/edit"}>Edit</Link>
+        <span>/</span>
+        <Link to={"/todo"}>Todo</Link>
       </div>
       <Routes>
         <Route path="/" element={<Home/>}/>

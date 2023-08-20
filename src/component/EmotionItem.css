@@ -1,6 +1,6 @@
 .EmotionItem {
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 25px;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,6 @@
 
 .EmotionItem span{
     font-size: 1rem;
-    height: 3rem;
     word-break: keep-all;
     font-family: 'Noto Sans KR', sans-serif;
 }
@@ -52,4 +51,27 @@
     background-color: #FD565F;
     color: white;
     font-weight: bold;
+}
+
+
+@media (max-width: 600px){
+    .emotion_list_wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .EmotionItem {
+        padding: 15px;
+        display: grid;
+        grid-template-columns: 25% 1fr;
+        align-items: center;
+    }
+
+    .EmotionItem img{
+        margin: 0;
+    }
+
+    .EmotionItem span{
+        font-size: 1.1rem;
+    }
 }
