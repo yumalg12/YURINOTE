@@ -1,7 +1,7 @@
 import { useSearchParams } from "react-router-dom";
-import Button from "../component/Button";
-import Header from "../component/Header";
-import Editor from "../component/Editor";
+import Button from "../component/Diary/Button";
+import Header from "../component/Diary/Header";
+import Editor from "../component/Diary/Editor";
 import logo from "../img/heart.svg"
 
 const Home = () => {

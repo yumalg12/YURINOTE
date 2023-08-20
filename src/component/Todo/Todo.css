@@ -1,0 +1,65 @@
+.Todo{
+  padding: 0 2rem;
+}
+
+.today{
+  color: #4147d5;
+}
+
+.TodoEditor .editor_wrapper{
+  display: flex;
+  align-items: center;
+}
+
+.TodoEditor button{
+  height: fit-content;
+}
+
+.TodoList .searchbar, .TodoEditor .editor_wrapper input{
+  width: 100%;
+  border: none;
+  box-sizing: border-box;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.TodoList .searchbar{
+  margin-bottom: 20px;
+}
+
+.TodoList .list_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.TodoItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0px 20px 10px 20px;
+  border-bottom: 1px solid #eee;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.1rem;
+}
+
+.TodoItem .checkbox_col {
+  width: 20px;
+}
+
+.TodoItem .title_col{
+  flex:1;
+}
+
+.TodoItem .date_col{
+  color: #ccc;
+}
+
+.TodoItem .btn_col button {
+  cursor: pointer;
+  color: gray;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 10px;
+  margin-top: -3px;
+}

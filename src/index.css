@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&family=Single+Day&display=swap');
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -7,12 +9,36 @@ body {
   align-items: center;
 }
 
-.h4{
-  font-weight: 400;
-  font-style: italic;
+h4{
+  margin-block-end: 0.5em;
+  margin-inline-end: 5px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #eee;
+}
+
+h4::before{
+  filter: hue-rotate(260deg);
+  content: "💗"
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+input, select, textarea {
+  padding: 0.3rem 0.8rem;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1rem;
+}
+
+textarea{
+  padding: 0.8rem;
+  line-height: 1.6;
+}
+
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  box-shadow: 0px 0px 0px 5px #d7e0ff9e;
+  outline: none;
 }
