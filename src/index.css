@@ -27,10 +27,11 @@ code {
 
 input, select, textarea {
   padding: 0.3rem 0.8rem;
-  border: none;
+  border: 1px solid #d7e0ff;
   border-radius: 5px;
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 1rem;
+  background: #d7e0ff20;
 }
 
 textarea{
@@ -40,5 +41,6 @@ textarea{
 
 input:focus-visible, select:focus-visible, textarea:focus-visible {
   box-shadow: 0px 0px 0px 5px #d7e0ff9e;
+  background-color: white;
   outline: none;
 }

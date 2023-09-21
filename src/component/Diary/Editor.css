@@ -9,9 +9,9 @@ textarea {
 }
 
 .emotion_list_wrapper{
-    display: flex;
-    justify-content: space-around;
+    display: grid;
     gap:5px;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .button_section{

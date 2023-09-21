@@ -1,22 +1,28 @@
-import emotion1 from "./img/emotion1.svg";
-import emotion2 from "./img/emotion2.svg";
-import emotion3 from "./img/emotion3.svg";
-import emotion4 from "./img/emotion4.svg";
-import emotion5 from "./img/emotion5.svg";
+import emo_normal from "./img/emo_normal.svg";
+import emo_good from "./img/emo_good.svg";
+import emo_verygood from "./img/emo_verygood.svg";
+import emo_happy from "./img/emo_happy.svg";
+import emo_bad from "./img/emo_bad.svg";
+import emo_angry from "./img/emo_angry.svg";
+import emo_sad from "./img/emo_sad.svg";
 
   export const getEmotionImgById = (emotionId) => {
     const targetEmotionId = String(emotionId);
     switch (targetEmotionId){
       case "1":
-        return emotion1;
+        return emo_normal;
       case "2":
-        return emotion2;
+        return emo_good;
       case "3":
-        return emotion3;
+        return emo_verygood;
       case "4":
-        return emotion4;
+        return emo_happy;
       case "5":
-        return emotion5;
+        return emo_bad;
+      case "6":
+        return emo_angry;
+      case "7":
+        return emo_sad;
       default:
         return null;
     }
@@ -25,7 +31,7 @@ import emotion5 from "./img/emotion5.svg";
   export const emotionList = [
     {
       id: 1,
-      name: "매우 좋음",
+      name: "평이함",
       img: getEmotionImgById(1),
     },
     {
@@ -35,18 +41,28 @@ import emotion5 from "./img/emotion5.svg";
     },
     {
       id: 3,
-      name: "평이함",
+      name: "매우 좋음",
       img: getEmotionImgById(3),
     },
     {
       id: 4,
-      name: "나쁨",
+      name: "행복함",
       img: getEmotionImgById(4),
     },
     {
       id: 5,
-      name: "매우 나쁨",
+      name: "나쁨",
       img: getEmotionImgById(5),
+    },
+    {
+      id: 6,
+      name: "매우 나쁨",
+      img: getEmotionImgById(6),
+    },
+    {
+      id: 7,
+      name: "우울함",
+      img: getEmotionImgById(7),
     },
   ]
 
