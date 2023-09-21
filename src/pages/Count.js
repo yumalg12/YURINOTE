@@ -70,7 +70,7 @@ function Count() {
 
             </Header>
             <div className="Count">
-                <h1>Simple Counter</h1>
+                <h1>카운터</h1>
                 <section>
                     <input value={text} onChange={handleSetText} />
                 </section>
