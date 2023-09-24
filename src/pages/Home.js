@@ -9,25 +9,22 @@ const Home = () => {
     console.log(searchParams.get("sort"));
 
     const dateObj = new Date();
-    const year = dateObj.getFullYear();
-    const month = dateObj.getMonth() + 1;
-    const day = dateObj.getDate();
+    const thisYear = dateObj.getFullYear();
+    const thisMonth = dateObj.getMonth() + 1;
+    const thisDay = dateObj.getDate();
 
     return <div>
         <Header
-            title={year+"년 "+month+"월"}
-            leftChild={<Button text={"<"} type="positive" onClick={() => {alert("<");}}/>}
-            rightChild={<Button text={">"} type="positive" onClick={() => {alert(">");}}/>}
+            title={thisYear+"년 "+thisMonth+"월"}
+            leftChild={<Button text={"<"} type="positive" onClick={() => {alert(thisMonth-1);}}/>}
+            rightChild={<Button text={">"} type="positive" onClick={() => {alert(thisMonth+1);}}/>}
         />
 
         <Calendar
-            year = {year}
-            month = {month}
+            year = {thisYear}
+            month = {thisMonth}
         />
 
-        <hr/>
-
-        
     </div>;
 };
 

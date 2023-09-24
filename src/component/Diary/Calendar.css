@@ -1,24 +1,34 @@
+div.Calendar {
+    padding: 2rem;
+    border-bottom: 1px solid #dedede;
+}
+
 .Calendar table {
     width: 100%;
-    padding: 2rem;
+    border-spacing: 0;
+    border-collapse: collapse;
 }
 
 .Calendar table th {
     background-color: #d7e0ff3f;
+    border: 1px solid #d7e0ff;
+    font-size: 1.2rem;
 }
 
 .Calendar table td{
-    padding: 5px;
-    width: 5rem;
+    padding: 3px 9px;
     height: 5rem;
     text-align: left;
     vertical-align: baseline;
+    border: 1px solid #f0f0f0;
+    color: #333;
+    font-size: 1.1rem;
 }
 
 .Calendar table td:first-child{
-    color: red;
+    color: deeppink;
 }
 
 .Calendar table td:last-child{
-    color: blue;
+    color: dodgerblue;
 }

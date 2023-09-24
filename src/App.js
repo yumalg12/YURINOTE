@@ -1,5 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
 import React, { useReducer, useRef, useEffect, useState } from "react";
+import 'modern-css-reset';
 import './App.css';
 import Home from './pages/Home';
 import New from './pages/New';
