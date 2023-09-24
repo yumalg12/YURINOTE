@@ -1,7 +1,7 @@
 .EmotionItem {
     cursor: pointer;
-    border-radius: 25px;
-    padding: 20px;
+    border-radius: 24px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;

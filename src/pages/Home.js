@@ -1,39 +1,33 @@
 import { useSearchParams } from "react-router-dom";
 import Button from "../component/Diary/Button";
 import Header from "../component/Diary/Header";
-import Editor from "../component/Diary/Editor";
+import Calendar from "../component/Diary/Calendar";
 import logo from "../img/heart.svg"
 
 const Home = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     console.log(searchParams.get("sort"));
+
+    const dateObj = new Date();
+    const year = dateObj.getFullYear();
+    const month = dateObj.getMonth() + 1;
+    const day = dateObj.getDate();
+
     return <div>
         <Header
-            title={"데일리 다이어리"}
-            leftChild={
-                <>
-                <img src={logo} alt="로고" width={30} style={{ margin: '0 0.5rem' }} />
-                <Button text={"긍정"} type="positive" onClick={() => {alert("Positive");}}/>
-                </>
-            }
-            rightChild={
-                <>
-                <Button text={"부정"} type="negative" onClick={() => {alert("Negative");}}/>
-                <img src={logo} alt="로고" width={30} style={{ margin: '0 0.5rem' }} />
-                </>
-            }
-            >
-                
-        </Header>
-
-        <Editor 
-        initData={{
-            date: new Date().getTime(),
-            emotionId: 3,
-            content: "",
-        }}
-        onSubmit={() => {alert("작성완료");}}
+            title={year+"년 "+month+"월"}
+            leftChild={<Button text={"<"} type="positive" onClick={() => {alert("<");}}/>}
+            rightChild={<Button text={">"} type="positive" onClick={() => {alert(">");}}/>}
         />
+
+        <Calendar
+            year = {year}
+            month = {month}
+        />
+
+        <hr/>
+
+        
     </div>;
 };
 

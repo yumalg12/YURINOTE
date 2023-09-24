@@ -1,0 +1,24 @@
+.Calendar table {
+    width: 100%;
+    padding: 2rem;
+}
+
+.Calendar table th {
+    background-color: #d7e0ff3f;
+}
+
+.Calendar table td{
+    padding: 5px;
+    width: 5rem;
+    height: 5rem;
+    text-align: left;
+    vertical-align: baseline;
+}
+
+.Calendar table td:first-child{
+    color: red;
+}
+
+.Calendar table td:last-child{
+    color: blue;
+}
