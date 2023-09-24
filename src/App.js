@@ -109,13 +109,11 @@ function App() {
           }}
         >
           <div className="App">
-            <div className="TempMenus">
-              <Link to={"/"}>Home </Link>
-              <span>/</span>
-              <Link to={"/new"}>New Diary </Link>
-              <span>/</span>
+            <div className="Menus">
+              <Link to={"/"}>Diary </Link>
+              <devider>/</devider>
               <Link to={"/todo"}>Todo</Link>
-              <span>/</span>
+              <devider>/</devider>
               <Link to={"/count"}>Count</Link>
             </div>
             <Routes>

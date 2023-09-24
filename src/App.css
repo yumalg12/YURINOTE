@@ -17,42 +17,45 @@
   width: 10px;
 }
 :root::-webkit-scrollbar-thumb {
-  background-color: #d7e0ff;
+  background-color: var(--light-color);
   border-radius: 10px;
 }
 :root::-webkit-scrollbar-track {
-  background-color: #d7e0ff3f;
+  background-color: var(--light-color-25);
   border-radius: 10px;
 }
 
-.TempMenus{
-  background: #D7E0FF;
+.Menus{
+  background: var(--light-color);
   display: flex;
-  justify-content: space-evenly;
-  padding: 0.1rem 6rem 0rem 6rem;
-  border-bottom: 1px solid #4147D5;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 0.1rem;
+  border-bottom: 1px solid var(--deep-color);
+  border-top: 1px solid var(--light-color);
+  height: 1.8rem;
 }
 
-.TempMenus a{
-  color:#4147d5;
+.Menus a{
+  color:var(--deep-color);
   text-decoration: none;
   font-size: 0.9em;
 }
 
-.TempMenus span{
-  color:#4147d5;
+.Menus devider{
+  color:var(--deep-color);
   font-size: 0.6em;
-  margin-top: 3px;
 }
 
-.TempMenus a:hover{
+.Menus a:hover{
   filter: brightness(120%) saturate(120%);
 }
 
 .initLoading p{
   font-family: 'Single Day', cursive;
   font-size: 1.5rem;
-  color: navy;
+  color: var(--moredeep-color);
   position: relative;
   top: 50vh;
   left: 50%;

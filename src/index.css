@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&family=Single+Day&family=Jua&display=swap');
 
+:root {
+  --deep-color: #4147D5;
+  --moredeep-color: #222565;
+  --light-color: rgb(215, 224, 255); /* #D7E0FF */
+  --light-color-62: rgba(215, 224, 255, 0.62);
+  --light-color-25: rgba(215, 224, 255, 0.25);
+  --light-color-13: rgba(215, 224, 255, 0.13);
+  --heart-marker-hue: 260deg;
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #d7e0ff3f;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--light-color-25);
 }
 
 h2{
@@ -32,12 +40,15 @@ code {
 
 input, select, textarea {
   padding: 0.7rem 1rem;
-  /* border: 1px solid #d7e0ff; */
-  border:none;
+  border: none;
   border-radius: 5px;
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 1rem;
-  background: #d7e0ff20;
+  background: var(--light-color-13);
+}
+
+select{
+  cursor: pointer;
 }
 
 textarea{
@@ -46,7 +57,7 @@ textarea{
 }
 
 input:focus-visible, select:focus-visible, textarea:focus-visible {
-  box-shadow: 0px 0px 0px 5px #d7e0ff9e;
+  box-shadow: 0px 0px 0px 5px var(--light-color-62); 
   background-color: white;
   outline: none;
 }

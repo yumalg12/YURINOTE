@@ -1,39 +1,37 @@
 import "./Calendar.css";
 
 const generateCalendar = (year, month) => {
-    const date = new Date(year, month - 1);
-    const firstDay = new Date(year, month - 1, 1).getDay();
+    const today = new Date(year, month - 1);
+    const startDate = new Date(year, month - 1, 1);
     
-    let calendarArr = [];
+    let calendar = [];
     let weekArr = [];
 
-    let currentDate = new Date(year, month - 1, 1);
-
-    // 첫 주의 시작 요일까지 빈 셀로 채우기
-    for (let i=0; i<firstDay; i++) {
-        weekArr.push(<td key={`empty-${i}`} />);
+    // 첫 주가 7일이 아닌 경우 빈 셀 채우기
+    for (let i=0; i<startDate.getDay(); i++) {
+        weekArr.push(<td key={`empty-${i}`}/>);
     }
     
-    while (currentDate.getMonth() === date.getMonth()) {
-      weekArr.push(<td key={currentDate.toString()}>{currentDate.getDate()}</td>);
+    while (startDate.getMonth() === today.getMonth()) {
+      weekArr.push(<td key={startDate.toString()}>{startDate.getDate()}</td>);
       
-      if (currentDate.getDay() === 6) {
-        calendarArr.push(<tr key={currentDate.toString()}>{weekArr}</tr>);
+      if (startDate.getDay() === 6) { //6=토요일이 되면 다음 주차 시작
+        calendar.push(<tr key={startDate.toString()}>{weekArr}</tr>);
         weekArr = [];
       }
       
-      currentDate.setDate(currentDate.getDate() + 1);
+      startDate.setDate(startDate.getDate() + 1);
      }
      
-     // 마지막 주가 완전한 행이 아닌 경우 빈 셀로 채우기
+     // 마지막 주가 7일이 아닌 경우 빈 셀 채우기
      if (weekArr.length > 0){
          for(let i=weekArr.length; i<7; i++){
-             weekArr.push(<td key={`empty-${i}`} className="empty"/>);
+             weekArr.push(<td key={`empty-${i}`}/>);
          }
-         calendarArr.push(<tr key={currentDate.toString()}>{weekArr}</tr>);
+         calendar.push(<tr key={startDate.toString()}>{weekArr}</tr>);
      }
 
-     return calendarArr;
+     return calendar;
 }
 
 const Calendar = ({ year, month }) => {
@@ -47,7 +45,9 @@ const Calendar = ({ year, month }) => {
                    </tr>
                </thead>
 
-               {generateCalendar(year, month)}
+            <tbody>
+                {generateCalendar(year, month)}
+            </tbody>
            </table>
 
        </div>

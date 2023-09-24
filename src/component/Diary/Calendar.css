@@ -1,6 +1,6 @@
 div.Calendar {
     padding: 2rem;
-    border-bottom: 1px solid #dedede;
+    border-bottom: 1px solid #eee;
 }
 
 .Calendar table {
@@ -10,9 +10,10 @@ div.Calendar {
 }
 
 .Calendar table th {
-    background-color: #d7e0ff3f;
-    border: 1px solid #d7e0ff;
+    background-color: var(--light-color-25);
+    border: 1px solid var(--light-color);
     font-size: 1.2rem;
+    color: var(--deep-color);
 }
 
 .Calendar table td{
@@ -31,4 +32,8 @@ div.Calendar {
 
 .Calendar table td:last-child{
     color: dodgerblue;
+}
+
+.Calendar td:empty{
+    background-color: #fcfcfc;
 }

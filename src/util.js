@@ -5,6 +5,7 @@ import emo_happy from "./img/emo_happy.svg";
 import emo_bad from "./img/emo_bad.svg";
 import emo_angry from "./img/emo_angry.svg";
 import emo_sad from "./img/emo_sad.svg";
+import emo_none from "./img/emo_none.svg";
 
   export const getEmotionImgById = (emotionId) => {
     const targetEmotionId = String(emotionId);
@@ -23,6 +24,8 @@ import emo_sad from "./img/emo_sad.svg";
         return emo_angry;
       case "7":
         return emo_sad;
+      case "8":
+        return emo_none;
       default:
         return null;
     }
@@ -64,6 +67,11 @@ import emo_sad from "./img/emo_sad.svg";
       name: "우울함",
       img: getEmotionImgById(7),
     },
+    {
+      id: 8,
+      name: "test",
+      img: getEmotionImgById(8),
+    },
   ]
 
   export const getFormattedDate = (targetDate) => {
@@ -77,4 +85,10 @@ import emo_sad from "./img/emo_sad.svg";
       date = `0${date}`;
     }
     return `${year}-${month}-${date}`;
+  }
+
+  export const getMonthRangeByDate = (date) => {
+    const beginTimeStamp = new Date(date.getFullYear(), date.getMonth(), 1).getTime();
+    const endTimeStamp = new Date(date.getFullYear(), date.getMonth() + 1, 0, 23, 59, 59).getTime();
+    return { beginTimeStamp, endTimeStamp };
   }

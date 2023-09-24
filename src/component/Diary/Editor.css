@@ -3,14 +3,14 @@
 }
 
 textarea {
-    width: 90%;
+    width: calc(100% - 10px);
     text-align: center;
     resize: vertical;
 }
 
 .emotion_list_wrapper{
     display: grid;
-    gap:5px;
+    gap: 5px;
     grid-template-columns: repeat(4, 1fr);
 }
 

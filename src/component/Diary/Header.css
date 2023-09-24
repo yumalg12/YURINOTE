@@ -2,7 +2,7 @@
     padding: 1rem 1.5rem;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #dedede;
+    box-shadow: 0 1px 8px -3px #00000020;
     background-color: white;
 }
 
@@ -10,11 +10,17 @@
     display: flex;
 }
 
-.Header .header_title {
-    width: 50%;
-    font-size: 1.8rem;
+.Header .header_title{
+    width: 80%;
     justify-content: center;
+}
+
+.Header .header_title label{
     font-family: 'Jua';
+    font-weight: 400;
+    font-size: 1.8rem;
+    position: relative;
+    top: 0.175rem;
 }
 
 .Header .header_left {

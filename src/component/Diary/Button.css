@@ -14,19 +14,19 @@
 }
 
 .Button_default { 
-    background-color: #D7E0FF;
-    border: 1px solid #D7E0FF;
-    color:#4147D5;
+    background-color: var(--light-color);
+    border: 1px solid var(--light-color);
+    color:var(--deep-color);
 }
 
 .Button_positive {
     background-color: white;
-    border: 1px solid #4147D5;
-    color: #4147D5;
+    border: 1px solid var(--deep-color);
+    color: var(--deep-color);
 }
 
 .Button_negative {
-    background-color: #4147D5;
+    background-color: var(--deep-color);
     border: 1px solid white;
     color: white;
 }
