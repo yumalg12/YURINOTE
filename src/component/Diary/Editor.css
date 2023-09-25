@@ -13,11 +13,3 @@ textarea {
     gap: 5px;
     grid-template-columns: repeat(4, 1fr);
 }
-
-.button_section{
-    margin: 2rem 0;
-}
-
-.button_section button{
-    font-size: 1.3rem;
-}

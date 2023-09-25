@@ -1,0 +1,38 @@
+.DiaryItem{
+    display: grid;
+    grid-template-columns: 6rem 1fr 3rem;
+    padding: 0 2rem;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.DiaryItem button{
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 5px 4px 3px 6px;
+}
+
+.DiaryItem button>span{
+    filter: hue-rotate(calc(var(--heart-marker-hue) - 40deg));
+}
+
+.DiaryItem .img_section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.DiaryItem .info_section {
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Noto Sans';
+    font-size: 1.1rem;
+}
+
+.DiaryItem .button_section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}

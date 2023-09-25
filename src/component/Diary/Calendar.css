@@ -17,13 +17,15 @@ div.Calendar {
 }
 
 .Calendar table td{
-    padding: 3px 9px;
+    padding: 4px 8px;
     height: 5rem;
     text-align: left;
     vertical-align: baseline;
     border: 1px solid #f0f0f0;
     color: #333;
-    font-size: 1.1rem;
+    font-size: 0.85rem;
+    font-family: 'Noto Sans';
+    letter-spacing: -1px;
 }
 
 .Calendar table td:first-child{

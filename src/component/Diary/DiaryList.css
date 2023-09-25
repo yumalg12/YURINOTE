@@ -1,0 +1,10 @@
+.DiaryList .menu_wrapper{
+    margin: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.DiaryList .menu_wrapper button{
+    font-size: 1.2rem;
+}

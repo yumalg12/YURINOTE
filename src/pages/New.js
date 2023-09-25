@@ -9,16 +9,16 @@ const New = () => {
     console.log(searchParams.get("sort"));
     return <div>
         <Header
-            title={"새 일기 작성"}
+            title={"새 일기 쓰기"}
             leftChild={
                 <>
                 <img src={logo} alt="로고" width={30} style={{ margin: '0 0.5rem' }} />
-                <Button text={"긍정"} type="positive" onClick={() => {alert("Positive");}}/>
+                <Button value={"긍정"} type="positive" onClick={() => {alert("Positive");}}/>
                 </>
             }
             rightChild={
                 <>
-                <Button text={"부정"} type="negative" onClick={() => {alert("Negative");}}/>
+                <Button value={"부정"} type="negative" onClick={() => {alert("Negative");}}/>
                 <img src={logo} alt="로고" width={30} style={{ margin: '0 0.5rem' }} />
                 </>
             }

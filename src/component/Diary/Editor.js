@@ -71,7 +71,7 @@ const Editor = ({ initData, onSubmit }) => {
         
         <div className="editor_section">
             <div className="editor_section button_section">
-                <Button text="작성 취소" onClick={handleOnGoBack}/> <Button text="작성 완료" type={"positive"} onClick={handleSubmit}/>
+                <Button value="작성 취소" onClick={handleOnGoBack}/> <Button value="작성 완료" type={"positive"} onClick={handleSubmit}/>
             </div>
         </div>
         
