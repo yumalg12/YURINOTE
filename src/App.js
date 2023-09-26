@@ -30,21 +30,21 @@ function reducer(state, action) {
 const mockData = [
   {
     id: "mock1",
-    date: new Date().getTime() - 1,
+    date: new Date(2023,7,21,0,45).getTime(),
     content: "mock1",
-    emotionId: 1,
+    emotionId: 7,
   },
   {
     id: "mock2",
-    date: new Date().getTime() - 2,
+    date: new Date(2023,8,3,11,16).getTime(),
     content: "mock2",
-    emotionId: 3,
+    emotionId: 1,
   },
   {
     id: "mock3",
-    date: new Date().getTime() - 3,
+    date: new Date().getTime(),
     content: "mock3",
-    emotionId: 5,
+    emotionId: 4,
   },
 ]
 

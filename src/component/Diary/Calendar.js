@@ -1,58 +1,78 @@
+import React, { useState, useEffect } from 'react';
 import "./Calendar.css";
 
-const generateCalendar = (year, month) => {
-    const today = new Date(year, month - 1);
+const generateCalendar = (year, month, emotionId) => {
+    const inputDate = new Date(year, month - 1);
     const startDate = new Date(year, month - 1, 1);
-    
+
     let calendar = [];
     let weekArr = [];
 
     // 첫 주가 7일이 아닌 경우 빈 셀 채우기
     for (let i=0; i<startDate.getDay(); i++) {
-        weekArr.push(<td key={`empty-${i}`}/>);
+        weekArr.push({ day: null });
     }
     
-    while (startDate.getMonth() === today.getMonth()) {
-      weekArr.push(<td key={startDate.toString()}>{startDate.getDate()}</td>);
-      
-      if (startDate.getDay() === 6) { //6=토요일이 되면 다음 주차 시작
-        calendar.push(<tr key={startDate.toString()}>{weekArr}</tr>);
-        weekArr = [];
-      }
-      
-      startDate.setDate(startDate.getDate() + 1);
-     }
-     
-     // 마지막 주가 7일이 아닌 경우 빈 셀 채우기
-     if (weekArr.length > 0){
-         for(let i=weekArr.length; i<7; i++){
-             weekArr.push(<td key={`empty-${i}`}/>);
-         }
-         calendar.push(<tr key={startDate.toString()}>{weekArr}</tr>);
-     }
+    while (startDate.getMonth() === inputDate.getMonth()) {
+        weekArr.push({ 
+            day: startDate.getDate(),
+            emotionId: emotionId,
+        });
 
-     return calendar;
+        if (startDate.getDay() === 6) { //토요일(=6) 이 되면 다음 주차 시작
+            calendar.push(weekArr);
+            // console.log(weekArr);
+            weekArr = [];
+        }
+
+        startDate.setDate(startDate.getDate() + 1);
+    }
+    
+    // 마지막 주가 7일이 아닌 경우 빈 셀 채우기
+    if (weekArr.length > 0){
+        for(let i=weekArr.length; i<7; i++){
+            weekArr.push({ day: null });
+        }
+        calendar.push(weekArr);
+    }
+
+    return calendar;
 }
+  
 
 const Calendar = ({ year, month }) => {
+    const [calendarData, setCalendarData] = useState([]);
+    const [today, setToday] = useState(new Date().toDateString());
 
-   return (
-       <div className="Calendar">
-           <table>
-               <thead>
-                   <tr>
-                       <th>일</th> <th>월</th> <th>화</th> <th>수</th> <th>목</th> <th>금</th> <th>토</th>
+    useEffect(() => {
+      setCalendarData(generateCalendar(year, month));
+    }, [year, month]);
+   
+    return (
+        <div id="Calendar" className="Calendar">
+            <table>
+                <thead>
+                    <tr>
+                        <th>일</th> <th>월</th> <th>화</th> <th>수</th> <th>목</th> <th>금</th> <th>토</th>
+                    </tr>
+                </thead>
+   
+             <tbody>
+                 {calendarData.map((week, i) => (
+                   <tr key={i}>
+                     {week.map((theDay, j) => 
+                       theDay.day
+                       ?(<td key={j} className={new Date(year, month - 1, theDay.day).toDateString() === today ? 'today' : ''}>{theDay.day}</td>)
+                       :(<td key={j}></td>)
+                     )}
                    </tr>
-               </thead>
-
-            <tbody>
-                {generateCalendar(year, month)}
-            </tbody>
-           </table>
-
-       </div>
-
-   );
-};
-
-export default Calendar;
+                 ))}
+             </tbody>
+            </table>
+   
+        </div>
+   
+    );
+   };
+   
+   export default Calendar;

@@ -9,22 +9,22 @@ import DiaryList from "../component/Diary/DiaryList";
 import logo from "../img/heart.svg"
 
 const Home = () => {
-    const [searchParams, setSearchParams] = useSearchParams();
-    console.log(searchParams.get("sort"));
-
     //월 변경
     const [pivotDate, setPivotDate] = useState(new Date());
-    const headerTitle = `${pivotDate.getFullYear()}년 ${pivotDate.getMonth() + 1}월`;
+    let pivotYear = pivotDate.getFullYear();
+    let pivotMonth = pivotDate.getMonth() + 1;
+    let today = new Date();
+
+    const headerTitle = `${pivotYear}년 ${pivotMonth}월`;
 
     const onIncreaseMonth = () => {
-        let today = new Date();
         if (pivotDate.getFullYear() === today.getFullYear() && pivotDate.getMonth() === today.getMonth()){
             alert("마지막 페이지입니다.");
         } else {
             setPivotDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth() + 1));
         }
     };
-
+    
     const onDecreaseMonth = () => {
         setPivotDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth() - 1));
     };
@@ -52,8 +52,8 @@ const Home = () => {
         />
 
         <Calendar
-            year = {pivotDate.getFullYear()}
-            month = {pivotDate.getMonth() + 1}
+            year = {pivotYear}
+            month = {pivotMonth}
         />
 
         <DiaryList

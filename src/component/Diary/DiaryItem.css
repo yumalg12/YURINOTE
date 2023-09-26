@@ -13,7 +13,7 @@
 }
 
 .DiaryItem button>span{
-    filter: hue-rotate(calc(var(--heart-marker-hue) - 40deg));
+    filter: hue-rotate(calc(var(--heart-marker-hue) - 40deg)) brightness(0.90) saturate(2);
 }
 
 .DiaryItem .img_section {
@@ -24,11 +24,35 @@
     padding: 10px;
 }
 
+.DiaryItem .info_section *{
+    cursor: pointer;
+}
+
 .DiaryItem .info_section {
     text-align: left;
-    cursor: pointer;
     font-family: 'Noto Sans';
-    font-size: 1.1rem;
+    font-size: 1rem;
+    letter-spacing: -0.6px;
+    padding: 5px 0px 5px 3px;
+    display: flex;
+    gap: 3px;
+    flex-direction: column;
+}
+
+.DiaryItem .info_section label{
+    font-weight: 600;
+}
+
+.DiaryItem .info_section label span{
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-left: 5px;
+    font-weight: 400;
+}
+
+.DiaryItem .info_section p{
+    font-weight: 300;
+    color: #333;
 }
 
 .DiaryItem .button_section {

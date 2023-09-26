@@ -41,7 +41,9 @@ const DiaryList = ({ data }) => {
     <div className="DiaryList">
         <div className="menu_wrapper">
             <div className="left_col">
-                <select value={sortType} onChange={onChangeSortType}>{sortOptions.map((e, i)=><option key={i} value={e.value}>{e.name}</option>)}</select>
+                <select value={sortType} onChange={onChangeSortType}>
+                    {sortOptions.map((e, i) => <option key={i} value={e.value}>{e.name}</option>)}
+                </select>
             </div>
             <div className="right_col">
                 <Button 

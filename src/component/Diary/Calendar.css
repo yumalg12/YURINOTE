@@ -28,6 +28,16 @@ div.Calendar {
     letter-spacing: -1px;
 }
 
+.Calendar table td:hover{
+    background-color: var(--light-color-13);
+}
+
+.Calendar table td.today{
+    background-color: var(--light-color-25);
+    outline-color: var(--middle-color);
+    outline-style: auto;
+}
+
 .Calendar table td:first-child{
     color: deeppink;
 }

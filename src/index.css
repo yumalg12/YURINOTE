@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&family=Single+Day&family=Jua&display=swap');
 
 :root {
-  --deep-color: #4147D5;
   --moredeep-color: #222565;
+  --deep-color: #4147D5;
+  --middle-color: #7890e3;
   --light-color: rgb(215, 224, 255); /* #D7E0FF */
   --light-color-62: rgba(215, 224, 255, 0.62);
   --light-color-25: rgba(215, 224, 255, 0.25);
