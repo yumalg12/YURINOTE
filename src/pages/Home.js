@@ -1,6 +1,6 @@
 import { useState, useContext, useEffect } from "react";
 import { DiaryStateContext } from "../App";
-import { getMonthRangeByDate  } from "../util";
+import { getMonthRangeByDate, setPageTitle  } from "../util";
 import Button from "../component/Diary/Button";
 import Header from "../component/Diary/Header";
 import Calendar from "../component/Diary/Calendar";
@@ -8,6 +8,10 @@ import DiaryList from "../component/Diary/DiaryList";
 import logo from "../img/heart.svg"
 
 const Home = () => {
+    useEffect(() => {
+        setPageTitle("일기장");
+    }, []);
+
     //월 변경
     const [pivotDate, setPivotDate] = useState(new Date());
     let pivotYear = pivotDate.getFullYear();

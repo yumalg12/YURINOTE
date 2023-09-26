@@ -99,3 +99,8 @@ import emo_none from "./img/emo_none.svg";
     const endTimeStamp = new Date(date.getFullYear(), date.getMonth() + 1, 0, 23, 59, 59).getTime();
     return { beginTimeStamp, endTimeStamp };
   }
+
+  export const setPageTitle = (title) => {
+    const titleElement = document.getElementsByTagName("title")[0];
+    titleElement.innerText = title.concat(' ✧ 유리노트');
+  }

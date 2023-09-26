@@ -1,7 +1,8 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import '../component/Todo/Todo.css';
+import { setPageTitle } from "../util";
 import Header from "../component/Diary/Header";
 import logo from "../img/heart.svg"
-import '../component/Todo/Todo.css';
 import TodoDate from '../component/Todo/TodoDate';
 import TodoEditor from '../component/Todo/TodoEditor';
 import TodoList from '../component/Todo/TodoList';
@@ -16,6 +17,10 @@ const mockTodo = [
 ];
 
 function Todo() {
+  useEffect(() => {
+    setPageTitle("투두리스트");
+  }, []);
+
   const [todo, setTodo] = useState(mockTodo);
 
   const idRef = useRef(1);

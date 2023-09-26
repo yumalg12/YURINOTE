@@ -1,6 +1,6 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { getFormattedDate, getFormattedDateKorean } from "../util.js";
+import { getFormattedDate, getFormattedDateKorean, setPageTitle } from "../util.js";
 import { DiaryDispatchContext } from "../App.js";
 import useDiary from "../hooks/useDiary";
 import Header from "../component/Diary/Header";
@@ -8,6 +8,10 @@ import Button from "../component/Diary/Button";
 import Editor from "../component/Diary/Editor";
 
 const Edit = () => {
+    useEffect(() => {
+        setPageTitle("일기 수정");
+    }, []);
+
     const navigate = useNavigate();
     const {id} = useParams();
     const data = useDiary(id);
@@ -37,7 +41,7 @@ const Edit = () => {
         const { date, emotionId, content } = data;
         return (<div>
             <Header 
-                title={getFormattedDateKorean(date)} 
+                title={"일기 수정"} 
                 leftChild={<Button value={'< 뒤로 가기'} type={'positive'} onClick={goBack}/>}
                 rightChild={<Button value={'일기 삭제'} type={'warning'} onClick={onClickDelete}/>}
             />

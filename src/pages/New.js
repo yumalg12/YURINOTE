@@ -1,12 +1,17 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { DiaryDispatchContext } from "../App.js";
+import { setPageTitle } from "../util";
 import logo from "../img/heart.svg"
 import Button from "../component/Diary/Button";
 import Header from "../component/Diary/Header";
 import Editor from "../component/Diary/Editor";
 
 const New = () => {
+    useEffect(() => {
+        setPageTitle("일기 쓰기");
+      }, []);
+      
     const navigate = useNavigate();
     const { onCreate } = useContext(DiaryDispatchContext);
     const onSubmit = (data) => {

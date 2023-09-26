@@ -1,10 +1,14 @@
 import { useRef, useEffect, useState } from 'react';
+import { setPageTitle } from "../util";
 import Header from "../component/Diary/Header";
 import logo from "../img/heart.svg"
 import Controller from '../component/Count/Controller';
 import Viewer from '../component/Count/Viewer';
 
 function Count() {
+    useEffect(() => {
+        setPageTitle("카운터");
+    }, []);
 
     const [count, setCount] = useState(0);
     const handleSetCount = (value) => {
