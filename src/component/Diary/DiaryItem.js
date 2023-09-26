@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { getEmotionImgById, getFormattedDateKorean } from "../../util.js";
 import Button from "./Button";
@@ -29,4 +30,4 @@ const DiaryItem = ({ id, emotionId, content, date }) => {
     </div>);
 };
 
-export default DiaryItem;
+export default React.memo(DiaryItem);
