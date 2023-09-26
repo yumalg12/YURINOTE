@@ -7,10 +7,11 @@ import EmotionItem from "./EmotionItem";
 
 const Editor = ({ initData, onSubmit }) => {
     const [state, setState] = useState({
-        date: getFormattedDate(new Date()),
-        emotionId: 3,
-        content: "",
+        date: getFormattedDate(new Date(initData.date)),
+        emotionId: initData.emotionId.value,
+        content: initData.content,
     });
+    console.log('Editor',initData);
     const handleChangeDate = (e) => {
         setState({
             ...state,
@@ -27,8 +28,8 @@ const Editor = ({ initData, onSubmit }) => {
         onSubmit(state);
     };
     const navigate = useNavigate();
-    const handleOnGoBack = () => {
-        navigate(-1);
+    const reset = () => {
+        navigate(0);
     };
     const handleChangeEmotion = (emotionId) => {
         setState({
@@ -71,7 +72,7 @@ const Editor = ({ initData, onSubmit }) => {
         
         <div className="editor_section">
             <div className="editor_section button_section">
-                <Button value="작성 취소" onClick={handleOnGoBack}/> <Button value="작성 완료" type={"positive"} onClick={handleSubmit}/>
+                <Button value="내용 초기화" onClick={reset}/>  <Button value="일기 저장" type={"negative"} onClick={handleSubmit}/>
             </div>
         </div>
         

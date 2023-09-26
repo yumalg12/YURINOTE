@@ -1,4 +1,3 @@
-import { useSearchParams } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
 import { DiaryStateContext } from "../App";
 import { getMonthRangeByDate  } from "../util";

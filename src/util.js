@@ -87,6 +87,12 @@ import emo_none from "./img/emo_none.svg";
     return `${year}-${month}-${date}`;
   }
 
+  export const getFormattedDateKorean = (targetDate) => {
+    const dateObj = new Date(targetDate);
+    const dayArr = ['일','월','화','수','목','금','토'];
+    return `${dateObj.getMonth()+1}월 ${dateObj.getDate()}일 ${dayArr[dateObj.getDay()]}요일`;
+}
+
   export const getMonthRangeByDate = (date) => {
     const beginTimeStamp = new Date(date.getFullYear(), date.getMonth(), 1).getTime();
     const endTimeStamp = new Date(date.getFullYear(), date.getMonth() + 1, 0, 23, 59, 59).getTime();

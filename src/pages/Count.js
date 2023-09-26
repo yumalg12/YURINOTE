@@ -49,7 +49,7 @@ function Count() {
             };
         }, []);
 
-        return (<><span>←짝수</span></>);
+        return (<><span>짝수</span></>);
     };
 
     return (
@@ -70,12 +70,11 @@ function Count() {
 
             </Header>
             <div className="Count">
-                <h1>카운터</h1>
                 <section>
-                    <input value={text} onChange={handleSetText} />
                 </section>
                 <section>
                     <Viewer count={count} />
+                    <input value={count % 2 === 0} onChange={handleSetText} />
                     {count % 2 === 0 && <Even />}
                 </section>
                 <section>

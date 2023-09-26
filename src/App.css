@@ -13,18 +13,6 @@
   padding-bottom: 2rem;
 }
 
-:root::-webkit-scrollbar {
-  width: 10px;
-}
-:root::-webkit-scrollbar-thumb {
-  background-color: var(--light-color);
-  border-radius: 10px;
-}
-:root::-webkit-scrollbar-track {
-  background-color: var(--light-color-25);
-  border-radius: 10px;
-}
-
 .Menus{
   background: var(--light-color);
   display: flex;
@@ -43,7 +31,7 @@
   font-size: 0.9em;
 }
 
-.Menus devider{
+.Menus span.devider{
   color:var(--deep-color);
   font-size: 0.6em;
 }

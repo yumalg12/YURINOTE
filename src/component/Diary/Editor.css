@@ -1,14 +1,17 @@
-.editor_section{
+.Editor .editor_section{
     padding: 0 3rem;
 }
 
-textarea {
+.Editor .button_section{
+    padding: 1rem 0;
+}
+
+.Editor textarea {
     width: calc(100% - 10px);
-    text-align: center;
     resize: vertical;
 }
 
-.emotion_list_wrapper{
+.Editor .emotion_list_wrapper{
     display: grid;
     gap: 5px;
     grid-template-columns: repeat(4, 1fr);

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { getEmotionImgById } from "../../util";
+import { getEmotionImgById, getFormattedDateKorean } from "../../util.js";
 import Button from "./Button";
 import "./DiaryItem.css";
 import "./EmotionItem.css";
@@ -11,11 +11,6 @@ const DiaryItem = ({ id, emotionId, content, date }) => {
     };
     const goEdit = () => {
         navigate(`/edit/${id}`);
-    }
-    const getFormattedDateKorean = (date) => {
-        const dateObj = new Date(date);
-        const dayArr = ['일','월','화','수','목','금','토'];
-        return `${dateObj.getMonth()+1}월 ${dateObj.getDate()}일 ${dayArr[dateObj.getDay()]}요일`;
     }
 
     return (

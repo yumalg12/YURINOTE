@@ -1,0 +1,33 @@
+.Viewer{
+    padding: 0 3rem;
+}
+
+.Viewer .emotion_img_wrapper {
+    border-radius: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 2rem;
+    margin: 0px 5rem;
+}
+
+.Viewer .emotion_img_wrapper span {
+    font-family: 'Noto Sans KR';
+    color: white;
+    font-weight: 600;
+}
+
+.Viewer .emotion_img_wrapper img {
+    width: 80%;
+}
+
+.Viewer .input_wrapper p{
+    font-family: 'Noto Sans KR';
+    padding: 0.8rem;
+    line-height: 1.6;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: var(--light-color-13);
+    width: calc(100% - 10px);
+    min-height: 10rem;
+}

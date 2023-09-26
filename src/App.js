@@ -111,9 +111,9 @@ function App() {
           <div className="App">
             <div className="Menus">
               <Link to={"/"}>Diary </Link>
-              <devider>/</devider>
+              <span className="devider">/</span>
               <Link to={"/todo"}>Todo</Link>
-              <devider>/</devider>
+              <span className="devider">/</span>
               <Link to={"/count"}>Count</Link>
             </div>
             <Routes>

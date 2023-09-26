@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import Button from "../../component/Diary/Button";
 
 const TodoEditor = ({onCreate}) => {
     const [content, setContent] = useState("");
@@ -29,7 +30,7 @@ const TodoEditor = ({onCreate}) => {
         value={content} 
         onChange={onChangeContent} 
         onKeyDown={onKeyDown}/>
-        <button className="Button Button_default" onClick={onSubmit}>추가</button>
+        <Button value={"추가"} type="negative" onClick={onSubmit}/>
     </div>
     </div>);
 
