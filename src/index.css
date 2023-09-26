@@ -11,6 +11,18 @@
   --heart-marker-hue: 260deg;
 }
 
+:root::-webkit-scrollbar {
+  width: 10px;
+}
+:root::-webkit-scrollbar-thumb {
+  background-color: var(--light-color);
+  border-radius: 10px;
+}
+:root::-webkit-scrollbar-track {
+  background-color: var(--light-color-25);
+  border-radius: 10px;
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;

@@ -12,7 +12,6 @@ import Count from './pages/Count';
 function reducer(state, action) {
   switch (action.type) {
     case "CREATE": {
-      console.log(state);
       return [action.data, ...state];
     }
     case "UPDATE": {
@@ -68,8 +67,8 @@ function App() {
     dispatch({
       type: "UPDATE",
       data: {
-        id: targetId,
-        date: new Date(date).getTime,
+        id: +targetId,
+        date: new Date(date).getTime(),
         content,
         emotionId,
       },

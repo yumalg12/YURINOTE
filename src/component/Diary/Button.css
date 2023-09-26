@@ -30,3 +30,9 @@
     border: 1px solid white;
     color: white;
 }
+
+.Button_warning {
+    background-color: orangered;
+    border: 1px solid orangered;
+    color: white;
+}

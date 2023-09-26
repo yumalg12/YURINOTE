@@ -1,6 +1,6 @@
 .DiaryItem{
     display: grid;
-    grid-template-columns: 6rem 1fr 3rem;
+    grid-template-columns: 6.1rem 1fr 3rem;
     padding: 0 2rem;
     gap: 10px;
     margin-bottom: 1rem;
@@ -31,11 +31,11 @@
 .DiaryItem .info_section {
     text-align: left;
     font-family: 'Noto Sans';
-    font-size: 1rem;
-    letter-spacing: -0.6px;
+    font-size: 0.96rem;
+    letter-spacing: -1px;
     padding: 5px 0px 5px 3px;
     display: flex;
-    gap: 3px;
+    gap: 2px;
     flex-direction: column;
 }
 
@@ -44,8 +44,8 @@
 }
 
 .DiaryItem .info_section label span{
-    color: #ccc;
     font-size: 0.9rem;
+    color: #ccc;
     margin-left: 5px;
     font-weight: 400;
 }
@@ -53,6 +53,12 @@
 .DiaryItem .info_section p{
     font-weight: 300;
     color: #333;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-width: 367px;
 }
 
 .DiaryItem .button_section {
