@@ -12,6 +12,7 @@ import Count from './pages/Count';
 function reducer(state, action) {
   switch (action.type) {
     case "CREATE": {
+      console.log(state);
       return [action.data, ...state];
     }
     case "UPDATE": {
@@ -29,22 +30,10 @@ function reducer(state, action) {
 
 const mockData = [
   {
-    id: "mock1",
-    date: new Date(2023,7,21,0,45).getTime(),
-    content: "mock1",
-    emotionId: 7,
-  },
-  {
-    id: "mock2",
-    date: new Date(2023,8,3,11,16).getTime(),
-    content: "mock2",
-    emotionId: 1,
-  },
-  {
-    id: "mock3",
+    id: "undefined",
     date: new Date().getTime(),
-    content: "mock3",
-    emotionId: 4,
+    content: "오늘의 일기를 작성해 보세요!",
+    emotionId: 0,
   },
 ]
 
@@ -67,13 +56,13 @@ function App() {
       type: "CREATE",
       data: {
         id: idRef.current,
-        date: new Date(date).getTime,
+        date: new Date(date).getTime(),
         content,
         emotionId,
       },
     });
     idRef.current += 1;
-  }
+  };
 
   const onUpdate = (targetId, date, content, emotionId) => {
     dispatch({
@@ -85,8 +74,7 @@ function App() {
         emotionId,
       },
     });
-    idRef.current += 1;
-  }
+  };
 
   const onDelete = (targetId) => {
     dispatch({

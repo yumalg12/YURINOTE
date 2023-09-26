@@ -24,7 +24,7 @@ import emo_none from "./img/emo_none.svg";
         return emo_angry;
       case "7":
         return emo_sad;
-      case "8":
+      case "0":
         return emo_none;
       default:
         return null;
@@ -68,16 +68,17 @@ import emo_none from "./img/emo_none.svg";
       img: getEmotionImgById(7),
     },
     {
-      id: 8,
-      name: "test",
-      img: getEmotionImgById(8),
+      id: 0,
+      name: "undefined",
+      img: getEmotionImgById(0),
     },
   ]
 
   export const getFormattedDate = (targetDate) => {
-    let year = targetDate.getFullYear();
-    let month = targetDate.getMonth() + 1;
-    let date = targetDate.getDate();
+    const dateObj = new Date(targetDate);
+    let year = dateObj.getFullYear();
+    let month = dateObj.getMonth() + 1;
+    let date = dateObj.getDate();
     if (month < 10) {
       month = `0${month}`;
     }

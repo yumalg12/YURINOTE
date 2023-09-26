@@ -7,11 +7,10 @@ import EmotionItem from "./EmotionItem";
 
 const Editor = ({ initData, onSubmit }) => {
     const [state, setState] = useState({
-        date: getFormattedDate(new Date(initData.date)),
+        date: new Date(initData.date).getTime(),
         emotionId: initData.emotionId.value,
         content: initData.content,
     });
-    console.log('Editor',initData);
     const handleChangeDate = (e) => {
         setState({
             ...state,
@@ -28,7 +27,7 @@ const Editor = ({ initData, onSubmit }) => {
         onSubmit(state);
     };
     const navigate = useNavigate();
-    const reset = () => {
+    const handleReset = () => {
         navigate(0);
     };
     const handleChangeEmotion = (emotionId) => {
@@ -41,7 +40,7 @@ const Editor = ({ initData, onSubmit }) => {
         if (initData) {
             setState({
                 ...initData,
-                date: getFormattedDate(new Date(parseInt(initData.date))),
+                date: new Date(initData.date).getTime(),
             });
         };
     }, [initData]);
@@ -50,7 +49,7 @@ const Editor = ({ initData, onSubmit }) => {
         <div className="editor_section">
             <h4>오늘의 날짜</h4>
             <div className="input_wrapper">
-                <input type="date" value={state.date} onChange={handleChangeDate}/>
+                <input type="date" value={getFormattedDate(state.date)} onChange={handleChangeDate}/>
             </div>
         </div>
         
@@ -72,7 +71,9 @@ const Editor = ({ initData, onSubmit }) => {
         
         <div className="editor_section">
             <div className="editor_section button_section">
-                <Button value="내용 초기화" onClick={reset}/>  <Button value="일기 저장" type={"negative"} onClick={handleSubmit}/>
+                <Button value="내용 초기화" onClick={handleReset}/>
+                &nbsp;
+                <Button value="일기 저장" type={"negative"} onClick={handleSubmit}/>
             </div>
         </div>
         
