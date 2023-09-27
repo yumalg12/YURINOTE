@@ -28,11 +28,11 @@ const Diary = () => {
         const { date, emotionId, content } = data;
         return (<div>
             <Header 
-                title={getFormattedDateKorean(date)} 
+                title={'일기 읽기'} 
                 leftChild={<Button value={'< 뒤로 가기'} type={'positive'} onClick={goBack}/>}
                 rightChild={<Button value={'수정하기'} type={''} onClick={goEdit}/>}
             />
-        <Viewer content={content} emotionId={emotionId}/></div>)
+        <Viewer date={date} content={content} emotionId={emotionId}/></div>)
     }
 };
 

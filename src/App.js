@@ -1,7 +1,8 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import React, { useReducer, useRef, useEffect, useState } from "react";
 import 'modern-css-reset';
 import './App.css';
+import Login from './pages/Login';
 import Home from './pages/Home';
 import New from './pages/New';
 import Diary from './pages/Diary';
@@ -102,14 +103,8 @@ function App() {
           }}
         >
           <div className="App">
-            <div className="Menus">
-              <Link to={"/"}>Diary </Link>
-              <span className="devider">/</span>
-              <Link to={"/todo"}>Todo</Link>
-              <span className="devider">/</span>
-              <Link to={"/count"}>Count</Link>
-            </div>
             <Routes>
+              <Route path="/login" element={<Login/>}/>
               <Route path="/" element={<Home/>}/>
               <Route path="/new" element={<New/>}/>
               <Route path="/diary/:id" element={<Diary/>}/>

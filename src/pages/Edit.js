@@ -41,7 +41,7 @@ const Edit = () => {
         const { date, emotionId, content } = data;
         return (<div>
             <Header 
-                title={"일기 수정"} 
+                title={"일기 고치기"} 
                 leftChild={<Button value={'< 뒤로 가기'} type={'positive'} onClick={goBack}/>}
                 rightChild={<Button value={'일기 삭제'} type={'warning'} onClick={onClickDelete}/>}
             />

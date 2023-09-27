@@ -21,7 +21,17 @@
     width: 80%;
 }
 
-.Viewer .input_wrapper p{
+.Viewer .date_wrapper p{
+    font-family: 'Noto Sans KR';
+    padding: 0.8rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: var(--light-color-13);
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.Viewer .content_wrapper p{
     font-family: 'Noto Sans KR';
     padding: 0.8rem;
     line-height: 1.6;
