@@ -5,13 +5,11 @@ const Header = ({ title,  leftChild, rightChild }) => {
     return (
         <>
         <div className="Menus">
-            <Link to={"/login"}>Login </Link>
+            <Link to={"/"}>Login </Link>
             <span className="devider">/</span>
-            <Link to={"/"}>Diary </Link>
+            <Link to={"/diary"}>Diary </Link>
             <span className="devider">/</span>
             <Link to={"/todo"}>Todo</Link>
-            <span className="devider">/</span>
-            <Link to={"/count"}>Count</Link>
         </div>
         <div className="Header">
             <div className="header_left">{leftChild}</div>

@@ -2,7 +2,7 @@ import "./Editor.css";
 import React, { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { emotionList, getFormattedDate } from "../../util.js";
-import Button from "./Button"
+import Button from "../Common/Button";
 import EmotionItem from "./EmotionItem";
 
 const Editor = ({ initData, onSubmit }) => {

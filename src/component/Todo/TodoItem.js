@@ -1,4 +1,4 @@
-import Button from "../Diary/Button";
+import Button from "../Common/Button";
 
 const TodoItem = ({id, content, isDone, createDate, onUpdate, onEdit, onDelete}) => {
     const onChangeCheckbox = () => {

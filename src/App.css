@@ -40,18 +40,16 @@
   filter: brightness(120%) saturate(120%);
 }
 
-.initLoading p{
-  font-family: 'Single Day', cursive;
-  font-size: 1.5rem;
-  color: var(--moredeep-color);
-  position: relative;
-  top: 50vh;
+.Loading {
+  position: absolute;
+  top: 50%;
   left: 50%;
-  width: fit-content;
-  transform: translate(-25%, -200%);
-  margin: 0;
-  background-image: linear-gradient(60deg, #fff 0%, #fff 100%);
-  background-repeat: no-repeat;
-  background-position: left 0 bottom -4px;
-  background-size: 120% 15px;
+  transform: translate(-50%, -100%);
+  animation: 5s linear 0s infinite loadingcolor;
+}
+
+@keyframes loadingcolor {
+  0% {color: var(--light-color);}
+  50%{color: var(--middle-color);}
+  100%{color: var(--light-color);}
 }

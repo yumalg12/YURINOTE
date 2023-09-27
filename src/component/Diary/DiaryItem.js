@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { getEmotionImgById, getFormattedDateKorean } from "../../util.js";
-import Button from "./Button";
+import Button from "../Common/Button";
 import "./DiaryItem.css";
 import "./EmotionItem.css";
 
 const DiaryItem = ({ id, emotionId, content, date }) => {
     const navigate = useNavigate();
     const goDetail = () => {
-        navigate(`/diary/${id}`);
+        navigate(`/diary/view/${id}`);
     };
     const goEdit = () => {
-        navigate(`/edit/${id}`);
+        navigate(`/diary/edit/${id}`);
     }
 
     return (

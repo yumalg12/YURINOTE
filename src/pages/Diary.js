@@ -1,39 +1,67 @@
-import { useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { getFormattedDateKorean, setPageTitle } from "../util.js";
-import useDiary from "../hooks/useDiary";
-import Header from "../component/Diary/Header";
-import Viewer from "../component/Diary/Viewer";
-import Button from "../component/Diary/Button";
+import { useState, useContext, useEffect } from "react";
+import { DiaryStateContext } from "../App";
+import { getMonthRangeByDate, setPageTitle  } from "../util";
+import Button from "../component/Common/Button";
+import Header from "../component/Common/Header";
+import Calendar from "../component/Diary/Calendar";
+import DiaryList from "../component/Diary/DiaryList";
 
 const Diary = () => {
     useEffect(() => {
         setPageTitle("일기장");
     }, []);
 
-    const {id} = useParams();
-    const data = useDiary(id);
-    const navigate = useNavigate();
+    //월 변경
+    const [pivotDate, setPivotDate] = useState(new Date());
+    let pivotYear = pivotDate.getFullYear();
+    let pivotMonth = pivotDate.getMonth() + 1;
+    let today = new Date();
 
-    const goBack = () => {
-        navigate(-1);
-    }
-    const goEdit = () => {
-        navigate(`/edit/${id}`);
-    }
+    const headerTitle = `${pivotYear}년 ${pivotMonth}월`;
 
-    if (!data) {
-        return <div>일기를 불러오고 있습니다...</div>;
-    } else {
-        const { date, emotionId, content } = data;
-        return (<div>
-            <Header 
-                title={'일기 읽기'} 
-                leftChild={<Button value={'< 뒤로 가기'} type={'positive'} onClick={goBack}/>}
-                rightChild={<Button value={'수정하기'} type={''} onClick={goEdit}/>}
-            />
-        <Viewer date={date} content={content} emotionId={emotionId}/></div>)
-    }
+    const onIncreaseMonth = () => {
+        if (pivotDate.getFullYear() === today.getFullYear() && pivotDate.getMonth() === today.getMonth()){
+            alert("마지막 페이지입니다.");
+        } else {
+            setPivotDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth() + 1));
+        }
+    };
+    
+    const onDecreaseMonth = () => {
+        setPivotDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth() - 1));
+    };
+
+    //일기 렌더링
+    const data = useContext(DiaryStateContext);
+    const [filteredData, setFilteredData] = useState([]);
+
+    useEffect(() => {
+        if (data.length >= 1){
+            const { beginTimeStamp, endTimeStamp } = getMonthRangeByDate(pivotDate);
+            setFilteredData(
+                data.filter(e => beginTimeStamp <= e.date && e.date <= endTimeStamp)
+            );
+        } else {
+            setFilteredData([]);
+        }
+    }, [data, pivotDate]);
+
+    return <div>
+        <Header
+            title={headerTitle}
+            leftChild={<Button value={"<"} type="positive" onClick={onDecreaseMonth}/>}
+            rightChild={<Button value={">"} type="positive" onClick={onIncreaseMonth}/>}
+        />
+
+        <Calendar
+            year = {pivotYear}
+            month = {pivotMonth}
+        />
+
+        <DiaryList
+            data = { filteredData }
+        />
+    </div>;
 };
 
 export default Diary;

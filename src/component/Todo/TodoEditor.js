@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import Button from "../../component/Diary/Button";
+import Button from "../Common/Button";
 
 const TodoEditor = ({onCreate}) => {
     const [content, setContent] = useState("");

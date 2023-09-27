@@ -3,12 +3,11 @@ import React, { useReducer, useRef, useEffect, useState } from "react";
 import 'modern-css-reset';
 import './App.css';
 import Login from './pages/Login';
-import Home from './pages/Home';
-import New from './pages/New';
 import Diary from './pages/Diary';
+import New from './pages/New';
+import DiaryView from './pages/DiaryView';
 import Edit from './pages/Edit';
 import Todo from './pages/Todo';
-import Count from './pages/Count';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -91,7 +90,7 @@ function App() {
   }
 
   if (!isDataLoaded){
-    return (<div className="initLoading"><p>데이터를 불러오는 중입니다.</p></div>);
+    return (<div className="Loading">데이터를 불러오는 중입니다.</div>);
   } else {
     return (
       <DiaryStateContext.Provider value={data}>
@@ -104,13 +103,12 @@ function App() {
         >
           <div className="App">
             <Routes>
-              <Route path="/login" element={<Login/>}/>
-              <Route path="/" element={<Home/>}/>
+              <Route path="/" element={<Login/>}/>
+              <Route path="/diary" element={<Diary/>}/>
               <Route path="/new" element={<New/>}/>
-              <Route path="/diary/:id" element={<Diary/>}/>
-              <Route path="/edit/:id" element={<Edit/>}/>
+              <Route path="/diary/view/:id" element={<DiaryView/>}/>
+              <Route path="/diary/edit/:id" element={<Edit/>}/>
               <Route path="/todo" element={<Todo/>}/>
-              <Route path="/count" element={<Count/>}/>
             </Routes>
           </div>
         </DiaryDispatchContext.Provider>
