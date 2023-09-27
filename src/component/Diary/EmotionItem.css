@@ -59,15 +59,9 @@
 
 
 @media (max-width: 600px){
-    .emotion_list_wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
     .EmotionItem {
-        padding: 15px;
+        padding: 10px;
         display: grid;
-        grid-template-columns: 25% 1fr;
         align-items: center;
     }
 

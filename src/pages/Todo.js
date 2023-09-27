@@ -50,21 +50,12 @@ function Todo() {
     <div>
       <Header
         title={"데일리 투두"}
-        leftChild={
-          <>
-            <img src={logo} alt="로고" width={30} style={{ margin: '0 0.5rem' }} />
-          </>
-        }
-        rightChild={
-          <>
-            <img src={logo} alt="로고" width={30} style={{ margin: '0 0.5rem' }} />
-          </>
-        }
       >
 
       </Header>
       <div className="Todo">
         <TodoDate />
+        <h4>Todo List</h4>
         <TodoEditor onCreate={onCreate} />
         <TodoList
           todo={todo}

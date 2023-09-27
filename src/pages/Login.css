@@ -30,6 +30,7 @@
   align-items: center;
   font-size: 1.3rem;
   margin: 1rem;
+  text-wrap: nowrap;
 }
 
 .Login .input-wrapper label {

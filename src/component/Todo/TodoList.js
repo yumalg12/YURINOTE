@@ -1,5 +1,6 @@
 import { useState } from "react";
 import TodoItem from "./TodoItem";
+import TodoSearch from "./TodoSearch";
 
 const TodoList = ({todo, onUpdate, onDelete}) => {
   const [search, setSearch] = useState("");
@@ -15,16 +16,16 @@ const TodoList = ({todo, onUpdate, onDelete}) => {
   };
 
     return (<div className="TodoList">
-    <h4>Todo List</h4>
-    <input className="searchbar" 
-    value={search}
-    onChange={onChangeSearch} 
-    placeholder="🔎 검색어를 입력하십시오"/>
     <div className="list_wrapper">
       {getSearchResult().map((it) => (
         <TodoItem key={it.id} {...it} onUpdate={onUpdate} onDelete={onDelete}/>))
       }
     </div>
+    <TodoSearch
+      search={search}
+      onChangeSearch={onChangeSearch}
+    />
+
     </div>)
 
 };

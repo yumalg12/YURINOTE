@@ -8,7 +8,8 @@
     flex-direction: column;
     align-items: center;
     padding: 2.5rem 2rem;
-    margin: 0px 5rem;
+    margin: 0px auto;
+    max-width: 16rem;
 }
 
 .Viewer .emotion_img_wrapper span {

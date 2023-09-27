@@ -23,13 +23,13 @@ const TodoEditor = ({onCreate}) => {
     };
 
     return (<div className="TodoEditor">
-    <h4>새로운 Todo 작성하기</h4>
     <div className="editor_wrapper">
         <input placeholder="🖍️ 새로운 Todo 작성하기" 
-        ref={inputRef}
-        value={content} 
-        onChange={onChangeContent} 
-        onKeyDown={onKeyDown}/>
+            ref={inputRef}
+            value={content} 
+            onChange={onChangeContent} 
+            onKeyDown={onKeyDown}
+        />
         <Button value={"추가"} type="negative" onClick={onSubmit}/>
     </div>
     </div>);

@@ -1,6 +1,12 @@
-const TodoItem = ({id, content, isDone, createDate, onUpdate, onDelete}) => {
+import Button from "../Diary/Button";
+
+const TodoItem = ({id, content, isDone, createDate, onUpdate, onEdit, onDelete}) => {
     const onChangeCheckbox = () => {
         onUpdate(id);
+    }
+
+    const onClickEdit = () => {
+        onEdit(id);
     }
 
     const onClickDelete = () => {
@@ -10,11 +16,13 @@ const TodoItem = ({id, content, isDone, createDate, onUpdate, onDelete}) => {
     return (
 <div className="TodoItem">
     <div className="checkbox_col">
-        <input type="checkbox" checked={isDone} onChange={onChangeCheckbox}/>
+        <input type="checkbox" className="toggle" checked={isDone} onChange={onChangeCheckbox}/>
     </div>
     <div className="title_col">{content}</div>
-    <div className="date_col">{new Date(createDate).toLocaleDateString()}</div>
-    <div className="btn_col"><button onClick={onClickDelete}>삭제</button></div>
+    <div className="btn_col">
+        <Button onClick={onClickEdit} addSpan={true} value={"✏️"}/>
+        <Button onClick={onClickDelete} addSpan={true} value={"🗑️"}/>
+    </div>
 </div>
     );
 };
