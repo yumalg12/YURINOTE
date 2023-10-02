@@ -6,11 +6,23 @@
   color: var(--deep-color);
 }
 
+.Todo .today img{
+  height: 3rem;
+  display: inline;
+  position: relative;
+  top: 0.8rem;
+  margin: 0 0.5rem;
+}
+
 /* TodoEditor */
 .TodoEditor .editor_wrapper{
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.5rem;
+}
+
+.TodoEditor .editor_wrapper img{
+  height: 1.6rem;
 }
 
 .TodoEditor button{
@@ -28,6 +40,13 @@
 /* TodoSearch */
 .TodoSearch {
   margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;}
+
+.TodoSearch img {
+  height: 1.6rem;
 }
 
 /* TodoList */
@@ -57,15 +76,18 @@
   color: #ccc;
 }
 
-.TodoItem .btn_col button {
-  font-size: 0.8rem;
-  font-weight: 400;
-  padding: 5px 5px 3px 5px;
-  margin-left: 3px;
-  filter: grayscale(1);
+.TodoItem .btn_col {
+  display: flex;
 }
 
-.TodoItem .btn_col button:hover {
+.TodoItem .btn_col img {
+  width: 1.6rem;
+  margin-left: 3px;
+  filter: grayscale(1);
+  cursor: pointer;
+}
+
+.TodoItem .btn_col img:hover {
   filter: grayscale(0);
 }
 

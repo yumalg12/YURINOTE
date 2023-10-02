@@ -23,3 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 한입리액트.code-workspace
 *.cache
+yurinote.code-workspace
+design/

@@ -16,7 +16,7 @@ const New = () => {
     const onSubmit = (data) => {
         const { date, content, emotionId } = data;
         onCreate(date, content, emotionId);
-        navigate('/',{ replace: true });
+        navigate('/diary',{ replace: true });
     }
     
     const goBack = () => {

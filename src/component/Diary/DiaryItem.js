@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { getEmotionImgById, getFormattedDateKorean } from "../../util.js";
+import { getEmotionImgById, getFormattedDateKorean, getIcon } from "../../util.js";
 import Button from "../Common/Button";
 import "./DiaryItem.css";
 import "./EmotionItem.css";
@@ -25,7 +25,7 @@ const DiaryItem = ({ id, emotionId, content, date }) => {
             <p>{content}</p>
         </div>
         <div className="button_section">
-            <Button onClick={goEdit} addSpan={true} value={"✏️"}/>
+            <img src={getIcon('modify')} onClick={goEdit}/>
         </div>
     </div>);
 };

@@ -66,3 +66,13 @@
     align-items: center;
     justify-content: flex-end;
 }
+
+.DiaryItem .button_section img{
+    width: 2rem;
+    cursor: pointer;
+    filter: grayscale(1);
+}
+
+.DiaryItem .button_section img:hover{
+    filter: grayscale(0);
+}

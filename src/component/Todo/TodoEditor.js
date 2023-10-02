@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import Button from "../Common/Button";
+import { getIcon } from "../../util.js";
 
 const TodoEditor = ({onCreate}) => {
     const [content, setContent] = useState("");
@@ -24,12 +25,13 @@ const TodoEditor = ({onCreate}) => {
 
     return (<div className="TodoEditor">
     <div className="editor_wrapper">
-        <input placeholder="🖍️ 새로운 Todo 작성하기" 
-            ref={inputRef}
-            value={content} 
-            onChange={onChangeContent} 
-            onKeyDown={onKeyDown}
-        />
+    <img src={getIcon('pencil')} />
+        <input placeholder={"새 Todo 작성하기"}
+        ref={inputRef} 
+        value={content} 
+        onChange={onChangeContent} 
+        onKeyDown={onKeyDown} />
+
         <Button value={"추가"} type="negative" onClick={onSubmit}/>
     </div>
     </div>);

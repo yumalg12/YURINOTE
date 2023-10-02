@@ -1,4 +1,5 @@
 import Button from "../Common/Button";
+import { getIcon } from "../../util.js";
 
 const TodoItem = ({id, content, isDone, createDate, onUpdate, onEdit, onDelete}) => {
     const onChangeCheckbox = () => {
@@ -20,8 +21,8 @@ const TodoItem = ({id, content, isDone, createDate, onUpdate, onEdit, onDelete})
     </div>
     <div className="title_col">{content}</div>
     <div className="btn_col">
-        <Button onClick={onClickEdit} addSpan={true} value={"✏️"}/>
-        <Button onClick={onClickDelete} addSpan={true} value={"🗑️"}/>
+        <img src={getIcon('modify')} onClick={onClickEdit}/>
+        <img src={getIcon('delete')} onClick={onClickDelete}/>
     </div>
 </div>
     );
