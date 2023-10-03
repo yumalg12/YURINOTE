@@ -49,7 +49,7 @@ const Editor = ({ initData, onSubmit }) => {
         <div className="editor_section">
             <h4>오늘의 날짜</h4>
             <div className="input_wrapper">
-                <input type="date" value={getFormattedDate(state.date)} onChange={handleChangeDate}/>
+                <input type="date" value={getFormattedDate(state.date, 'yyyy-MM-DD')} onChange={handleChangeDate}/>
             </div>
         </div>
         

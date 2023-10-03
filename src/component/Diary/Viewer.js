@@ -1,4 +1,4 @@
-import { emotionList, getEmotionImgById, getFormattedDateKorean } from '../../util';
+import { emotionList, getEmotionImgById, getFormattedDate } from '../../util';
 import './Viewer.css';
 
 const Viewer = ({ date, content, emotionId }) => {
@@ -7,7 +7,7 @@ const Viewer = ({ date, content, emotionId }) => {
     <div className='Viewer'>
         <h4>오늘의 날짜</h4>
         <div className='date_wrapper'>
-            <p>{new Date(date).getFullYear()}{'년 '}{getFormattedDateKorean(date)}{' 🗓️'}</p>
+            <p>{getFormattedDate(date, "yyyy-MM-DD")}{' ('}{getFormattedDate(date, "요일")}{') '}{' 🗓️'}</p>
         </div>
         <h4>오늘의 감정</h4>
         <div className={['emotion_img_wrapper', `EmotionItem_on_${emotionId}`].join(' ')}>
@@ -16,7 +16,7 @@ const Viewer = ({ date, content, emotionId }) => {
         </div>
         <h4>오늘의 일기</h4>
         <div className='content_wrapper'>
-            <p>{content}</p>
+            <textarea readOnly rows={6} >{content}</textarea>
         </div>
     </div>
     )

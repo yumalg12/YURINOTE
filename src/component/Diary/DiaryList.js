@@ -33,7 +33,7 @@ const DiaryList = ({ data }) => {
     const navigate = new useNavigate();
 
     const onClickNew = () => {
-        navigate("/new");
+        navigate("/diary/new");
     }
 
 

@@ -6,11 +6,6 @@
     padding: 1rem 0;
 }
 
-.Editor textarea {
-    width: calc(100% - 10px);
-    resize: vertical;
-}
-
 .Editor .emotion_list_wrapper{
     display: grid;
     gap: 5px;

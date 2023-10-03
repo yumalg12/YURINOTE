@@ -67,6 +67,9 @@ select{
 
 textarea{
   line-height: 1.6;
+  width: calc(100% - 10px);
+  resize: vertical;
+  height: fit-content;
 }
 
 input:focus-visible, select:focus-visible, textarea:focus-visible {
