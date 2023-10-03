@@ -7,7 +7,7 @@ const TodoItem = ({id, content, isDone, createDate, onUpdate, onEdit, onDelete})
     }
 
     const onClickEdit = () => {
-        onEdit(id);
+        onEdit(id, content);
     }
 
     const onClickDelete = () => {

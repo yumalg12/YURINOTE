@@ -86,7 +86,6 @@ function App() {
       type: "DELETE",
       targetId,
     });
-    idRef.current += 1;
   }
 
   if (!isDataLoaded){
