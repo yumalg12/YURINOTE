@@ -120,4 +120,6 @@ function App() {
     }
 }
 
+export const DiaryStateContext = React.createContext();
+export const DiaryDispatchContext = React.createContext();
 export default App;
