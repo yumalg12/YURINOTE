@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getFormattedDate, getFormattedDateKorean, setPageTitle } from "../util.js";
-import { DiaryDispatchContext } from "../App.js";
+import { DiaryDispatchContext } from "../pages/Diary.js";
 import useDiary from "../hooks/useDiary";
 import Header from "../component/Common/Header";
 import Button from "../component/Common/Button";
