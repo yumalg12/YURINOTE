@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { getFormattedDate, getFormattedDateKorean, setPageTitle } from "../util.js";
-import { DiaryDispatchContext } from "../pages/Diary.js";
+import { getFormattedDate, setPageTitle } from "../util.js";
+import { DiaryDispatchContext } from "../App.js";
 import useDiary from "../hooks/useDiary";
 import Header from "../component/Common/Header";
 import Button from "../component/Common/Button";
@@ -21,18 +21,16 @@ const Edit = () => {
     const { onUpdate, onDelete } = useContext(DiaryDispatchContext);
 
     const onClickDelete = () => {
-        if (window.confirm(`${getFormattedDate(data.date)} 일자의 일기를 지우시겠습니까?\n이 작업은 되돌릴 수 없습니다.`)){
+        if (window.confirm(`${getFormattedDate(data.date, 'yyyy-MM-DD')} 일자의 일기를 지우시겠습니까?\n이 작업은 되돌릴 수 없습니다.`)){
             onDelete(id);
             navigate('/diary',{ replace: true });
         };
     }
     
     const onSubmit = (data) => {
-        if (window.confirm(`${getFormattedDate(data.date)} 일자의 일기를 현재 내용으로 수정하시겠습니까?`)){
-            const { date, content, emotionId } = data;
-            onUpdate(id, date, content, emotionId);
-            navigate('/diary',{ replace: true });
-        };
+        const { date, content, emotionId } = data;
+        onUpdate(id, date, content, emotionId);
+        navigate('/diary',{ replace: true });
     }
 
     if (!data) {

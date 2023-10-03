@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useReducer } from "react";
 import "../component/Todo/Todo.css";
-import { setPageTitle, getFormattedDateKorean, getIcon } from "../util";
+import { setPageTitle, getFormattedDate, getIcon } from "../util";
 import Header from "../component/Common/Header";
 import TodoEditor from "../component/Todo/TodoEditor";
 import TodoList from "../component/Todo/TodoList";
@@ -80,7 +80,7 @@ function Todo() {
    };
 
    const onEdit = (targetID, content) => {
-     dispatch({ type: "EDIT", id: targetID , content});
+     dispatch({ type: "EDIT", id: targetID, content });
    };
 
    const onDelete = (targetID) => {
@@ -97,7 +97,7 @@ function Todo() {
            <h2>
              오늘은{" "}
              <span className="today">
-               {getFormattedDateKorean(new Date())}
+               {getFormattedDate(new Date(), '모월모일모요일')}
                <img src={getIcon('calendar')} />
              </span>
            </h2>

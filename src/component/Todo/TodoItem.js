@@ -7,6 +7,10 @@ const TodoItem = ({id, content, isDone, createDate, onUpdate, onEdit, onDelete})
     }
 
     const onClickEdit = () => {
+        console.log(this);
+    }
+    
+    const onEditSave = () => {
         onEdit(id, content);
     }
 
@@ -19,9 +23,9 @@ const TodoItem = ({id, content, isDone, createDate, onUpdate, onEdit, onDelete})
     <div className="checkbox_col">
         <input type="checkbox" className="toggle" checked={isDone} onChange={onChangeCheckbox}/>
     </div>
-    <div className="title_col">{content}</div>
+    <div className="title_col"><p>{content}</p></div>
     <div className="btn_col">
-        <img src={getIcon('modify')} onClick={onClickEdit}/>
+        <img src={getIcon('modify')}/>
         <img src={getIcon('delete')} onClick={onClickDelete}/>
     </div>
 </div>

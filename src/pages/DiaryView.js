@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { getFormattedDateKorean, setPageTitle } from "../util.js";
+import { setPageTitle } from "../util.js";
 import useDiary from "../hooks/useDiary.js";
 import Header from "../component/Common/Header.js";
 import Viewer from "../component/Diary/Viewer.js";
