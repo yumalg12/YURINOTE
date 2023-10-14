@@ -32,7 +32,7 @@ const New = () => {
         <Editor 
             initData={{
                 date: new Date().getTime(),
-                emotionId: 1,
+                emotionId: 8,
                 content: "",
             }}
             onSubmit={onSubmit}

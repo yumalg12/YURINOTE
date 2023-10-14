@@ -57,6 +57,10 @@
     background-color: #CBB8DE;
 }
 
+.EmotionItem_on_8{
+    background-color: #a0a3ea;
+}
+
 
 @media (max-width: 600px){
     .EmotionItem {

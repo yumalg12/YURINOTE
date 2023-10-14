@@ -6,6 +6,7 @@ import emo_bad from "./img/emo_bad.svg";
 import emo_angry from "./img/emo_angry.svg";
 import emo_sad from "./img/emo_sad.svg";
 import emo_none from "./img/emo_none.svg";
+import emo_default from "./img/emo_default.svg";
 import { type } from "@testing-library/user-event/dist/type";
 
 export const getIcon = (iconName) => {
@@ -56,6 +57,8 @@ export const getEmotionImgById = (emotionId) => {
             return emo_angry;
         case "7":
             return emo_sad;
+        case "8":
+            return emo_default;
         case "0":
             return emo_none;
         default:
@@ -98,6 +101,11 @@ export const emotionList = [
         id: 7,
         name: "우울함",
         img: getEmotionImgById(7),
+    },
+    {
+        id: 8,
+        name: "기본",
+        img: getEmotionImgById(8),
     },
 ];
 
