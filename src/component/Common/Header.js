@@ -5,7 +5,7 @@ const Header = ({ title,  leftChild, rightChild }) => {
     return (
         <>
         <div className="Menus">
-            <Link to={"/"}>Login </Link>
+            <Link to={"/"}>Main </Link>
             <span className="devider">/</span>
             <Link to={"/diary"}>Diary </Link>
             <span className="devider">/</span>

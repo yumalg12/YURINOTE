@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import React, { useReducer, useRef, useEffect, useState } from "react";
 import "modern-css-reset";
 import "./App.css";
-import Login from "./pages/Login";
+import Main from "./pages/Main";
 import Diary from "./pages/Diary";
 import New from "./pages/New";
 import DiaryView from "./pages/DiaryView";
@@ -112,7 +112,7 @@ function App() {
                     </DiaryDispatchContext.Provider>
                 </DiaryStateContext.Provider>
                 <Routes>
-                    <Route path="/" element={<Login />} />
+                    <Route path="/" element={<Main />} />
                     <Route path="/todo" element={<Todo />} />
                 </Routes>
             </div>

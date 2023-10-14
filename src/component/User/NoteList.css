@@ -1,0 +1,49 @@
+.NoteList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.NoteList .NoteCard{
+  width: 100%;
+  border-radius: 12px;
+  border: 6px solid var(--light-color-62);
+  background: #fefefe;
+  cursor: pointer;
+  max-width: 16rem;
+  min-height: 16rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1rem 1.4rem;
+}
+
+.NoteList .NoteCard .id {
+  color: var(--middle-color);
+  font-weight: bold;
+  text-align: left;
+}
+
+.NoteList .NoteCard .name{
+  padding-bottom: 1rem;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-height: 7rem;
+  margin-top: -1rem;
+}
+
+
+@media (max-width: 900px) {
+  .NoteList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .NoteList {
+    grid-template-columns: 1fr;
+  }
+}

@@ -21,7 +21,7 @@ const Edit = () => {
     const { onUpdate, onDelete } = useContext(DiaryDispatchContext);
 
     const onClickDelete = () => {
-        if (window.confirm(`${getFormattedDate(data.date, 'yyyy-MM-DD')} 일자의 일기를 지우시겠습니까?\n이 작업은 되돌릴 수 없습니다.`)){
+        if (window.confirm(`현재 일기를 지우시겠습니까?\n이 작업은 되돌릴 수 없습니다.`)){
             onDelete(id);
             navigate('/diary',{ replace: true });
         };

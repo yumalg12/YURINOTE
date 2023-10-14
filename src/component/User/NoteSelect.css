@@ -1,0 +1,49 @@
+.NoteSelect {
+  font-family: 'Noto Sans KR';
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 0 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  background: #f4f7ff;
+}
+
+.NoteSelect .logo {
+  width: 80%;
+  max-width: 540px;
+  margin: 3rem auto;
+}
+
+.NoteSelect .icon {
+  width: 1.4rem;
+  display: inline;
+  margin-right: 5px;
+}
+
+.NoteSelect label {
+  margin-bottom: 3rem;
+  font-size: 1.6rem;
+  word-break: keep-all;
+}
+
+@media (max-width: 900px) {
+  .NoteSelect {
+    padding: 0 1rem;
+    height: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .NoteSelect {
+    transform: translate(-50%, -36%);
+    padding-bottom: 6rem;
+  }
+}

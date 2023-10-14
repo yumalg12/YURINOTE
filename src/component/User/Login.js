@@ -1,9 +1,9 @@
 import './Login.css';
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { setPageTitle } from "../util";
-import Button from "../component/Common/Button";
-import logo from "../img/yurinote-logo.svg";
+import { setPageTitle } from "../../util";
+import Button from "../../component/Common/Button";
+import logo from "../../img/yurinote-logo.svg";
 
 const Login = () => {
   useEffect(() => {
@@ -14,7 +14,7 @@ const Login = () => {
 
   const navigate = useNavigate();
   const goSignup = () => {
-    alert('개발 예정');
+    alert('개발 중입니다. 로그인 버튼을 누르세요.');
   };
 
   const goHome = () => {
