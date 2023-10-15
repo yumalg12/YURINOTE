@@ -13,33 +13,6 @@
   padding-bottom: 2rem;
 }
 
-.Menus{
-  background: var(--light-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  padding-top: 0.1rem;
-  border-bottom: 1px solid var(--deep-color);
-  border-top: 1px solid var(--light-color);
-  height: 1.8rem;
-}
-
-.Menus a{
-  color:var(--deep-color);
-  text-decoration: none;
-  font-size: 0.9em;
-}
-
-.Menus span.devider{
-  color:var(--deep-color);
-  font-size: 0.6em;
-}
-
-.Menus a:hover{
-  filter: brightness(120%) saturate(120%);
-}
-
 .Loading {
   position: absolute;
   top: 50%;

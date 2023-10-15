@@ -59,7 +59,7 @@ const NoteList = () => {
           alert('수정이 취소되었습니다.');
         }
       } else {
-        sessionStorage.setItem('selectedNoteId', id);
+        sessionStorage.setItem('currentNote', id);
         navigate('/diary');
       }
   };

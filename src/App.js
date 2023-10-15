@@ -8,6 +8,7 @@ import New from "./pages/New";
 import DiaryView from "./pages/DiaryView";
 import Edit from "./pages/Edit";
 import Todo from "./pages/Todo";
+import Setting from "./pages/Setting";
 
 function reducer(state, action) {
     switch (action.type) {
@@ -114,6 +115,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Main />} />
                     <Route path="/todo" element={<Todo />} />
+                    <Route path="/setting" element={<Setting />} />
                 </Routes>
             </div>
         );

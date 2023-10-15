@@ -1,13 +1,12 @@
 div.Calendar {
-    padding: 2rem;
+    padding: 1rem;
     border-bottom: 1px solid #eee;
 }
 
 .Calendar table {
-    width: 100%;
-    border-spacing: 0;
-    border-collapse: collapse;
+    border-spacing: 1rem;
     cursor: default;
+    margin: 0 auto;
 }
 
 .Calendar table th {
@@ -15,26 +14,28 @@ div.Calendar {
     border: 1px solid var(--light-color);
     font-size: 1.2rem;
     color: var(--deep-color);
+    padding: 0 0.3rem;
+    border-radius: 100%;
 }
 
 .Calendar table td{
-    padding: 4px 8px;
-    height: 5rem;
-    text-align: left;
-    vertical-align: baseline;
-    border: 1px solid #f0f0f0;
     color: #333;
-    font-size: 0.85rem;
+    font-size: 0.96rem;
     font-family: 'Noto Sans';
     letter-spacing: -1px;
+    background-color: white;
+    border-radius: 100%;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.22rem 0.42rem 0.18rem 0.38rem;
 }
 
 .Calendar table td:hover{
-    background-color: var(--light-color-13);
+    background-color: var(--light-color-25);
 }
 
 .Calendar table td.today{
-    background-color: var(--light-color-25);
+    background-color: var(--light-color-62);
     outline-color: var(--middle-color);
     outline-style: auto;
 }
@@ -48,5 +49,5 @@ div.Calendar {
 }
 
 .Calendar td:empty{
-    background-color: #fcfcfc;
+    background-color: #fafafa;
 }

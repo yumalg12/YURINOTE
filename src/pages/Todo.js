@@ -90,7 +90,7 @@ function Todo() {
     if (!isDataLoaded){
       return (<div className="Loading">데이터를 불러오는 중입니다.</div>);
     } else { return (
-     <div>
+     <>
        <Header title={"투두 체크보드"} />
        <div className="Todo">
          <div className="TodoDate">
@@ -106,7 +106,7 @@ function Todo() {
          <TodoEditor onCreate={onCreate} />
          <TodoList todo={todoList} onUpdate={onUpdate} onDelete={onDelete} onEdit={onEdit} />
        </div>
-     </div>
+     </>
    );
     }
 }

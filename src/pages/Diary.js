@@ -46,7 +46,7 @@ const Diary = () => {
         }
     }, [data, pivotDate]);
 
-    return <div>
+    return <>
                 <Header
                     title={headerTitle}
                     leftChild={<Button value={"<"} type="positive" onClick={onDecreaseMonth} />}
@@ -61,7 +61,7 @@ const Diary = () => {
         <DiaryList
             data = { filteredData }
         />
-    </div>;
+    </>;
 };
 
 export default Diary;
