@@ -40,7 +40,7 @@ const generateCalendar = (year, month, emotionId) => {
     return calendar;
 };
 
-const Calendar = ({ year, month }) => {
+const Calendar = ({ year, month, leftChild, rightChild }) => {
     const [calendarData, setCalendarData] = useState([]);
     const [today, setToday] = useState(new Date().toDateString());
 
@@ -49,7 +49,11 @@ const Calendar = ({ year, month }) => {
     }, [year, month]);
 
     return (
+        <>
+        <h3>{year}년 {month}월</h3>
         <div id="Calendar" className="Calendar">
+                        <div className="header_left">{leftChild}</div>
+
             <table>
                 <thead>
                     <tr>
@@ -69,7 +73,10 @@ const Calendar = ({ year, month }) => {
                     ))}
                 </tbody>
             </table>
+            <div className="header_right">{rightChild}</div>
+
         </div>
+                                </>
     );
 };
 

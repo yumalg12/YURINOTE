@@ -1,6 +1,13 @@
+h3 {
+    margin-top: 1.5rem;
+}
+
 div.Calendar {
-    padding: 1rem;
+    padding: 0rem 1rem 1rem 1rem;
     border-bottom: 1px solid #eee;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
 }
 
 .Calendar table {
@@ -27,7 +34,7 @@ div.Calendar {
     border-radius: 100%;
     text-align: center;
     vertical-align: middle;
-    padding: 0.22rem 0.42rem 0.18rem 0.38rem;
+    padding: 0.2rem 0.4rem;
 }
 
 .Calendar table td:hover{

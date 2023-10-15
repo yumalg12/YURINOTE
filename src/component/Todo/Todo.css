@@ -6,11 +6,19 @@
   color: var(--deep-color);
 }
 
-.Todo .today img{
+.Todo h2 > img{
   height: 3rem;
   display: inline;
   position: relative;
   top: 0.8rem;
+  margin: 0 0.5rem;
+}
+
+.Todo h4 > img{
+  height: 1.6rem;
+  display: inline;
+  position: relative;
+  top: 0.3rem;
   margin: 0 0.5rem;
 }
 

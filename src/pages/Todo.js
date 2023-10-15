@@ -94,15 +94,14 @@ function Todo() {
        <Header title={"투두 체크보드"} />
        <div className="Todo">
          <div className="TodoDate">
-           <h2>
-             오늘은{" "}
+           <h4>
              <span className="today">
                {getFormattedDate(new Date(), '모월모일모요일')}
-               <img src={getIcon('calendar')} />
              </span>
-           </h2>
+               <img src={getIcon('calendar')} />
+             의 Todo List
+           </h4>
          </div>
-         <h4>Todo List</h4>
          <TodoEditor onCreate={onCreate} />
          <TodoList todo={todoList} onUpdate={onUpdate} onDelete={onDelete} onEdit={onEdit} />
        </div>

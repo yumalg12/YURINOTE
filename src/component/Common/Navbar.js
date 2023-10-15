@@ -25,24 +25,23 @@ const Navbar = () => {
     },
   ];
 
-  const showMenus = () => {
-    console.log('show');
-  }
-
   return (
+    <>
     <div className="Navbar">
       <div className="NameSection">
         <span className="name">{currentNoteName}</span><span>다이어리</span>
       </div>
-      <div className="MenuSection" onClick={showMenus()}/>
+      <button className="MenuSection"/>
+        </div>
       <div className="Menus">
         {Menus.map((e, i) => (
           <React.Fragment key={i}>
             <Link to={e.url}>{e.menuName}</Link>
+            {i === Menus.length - 1 ? null : <span className="devider">/</span>}
           </React.Fragment>
         ))}
      </div>
-   </div>
+   </>
  );
 };
 

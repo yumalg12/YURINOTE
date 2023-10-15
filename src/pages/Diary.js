@@ -31,6 +31,10 @@ const Diary = () => {
         setPivotDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth() - 1));
     };
 
+    const onGoToday = () => {
+        setPivotDate(new Date());
+    }
+
     //일기 렌더링
     const data = useContext(DiaryStateContext);
     const [filteredData, setFilteredData] = useState([]);
@@ -47,21 +51,22 @@ const Diary = () => {
     }, [data, pivotDate]);
 
     return <>
-                <Header
-                    title={headerTitle}
-                    leftChild={<Button value={"<"} type="positive" onClick={onDecreaseMonth} />}
-                    rightChild={<Button value={">"} type="positive" onClick={onIncreaseMonth} />}
-                />
+            <Header
+                title={"감정 일기장"}
+                rightChild={<Button value={"Today"} type="positive" onClick={onGoToday} />}
+            />
 
-        <Calendar
-            year = {pivotYear}
-            month = {pivotMonth}
-        />
+            <Calendar
+                year = {pivotYear}
+                month = {pivotMonth}
+                leftChild={<Button value={"<"} onClick={onDecreaseMonth} />}
+                rightChild={<Button value={">"} onClick={onIncreaseMonth} />}
+            />
 
-        <DiaryList
-            data = { filteredData }
-        />
-    </>;
+            <DiaryList
+                data = { filteredData }
+            />
+        </>;
 };
 
 export default Diary;

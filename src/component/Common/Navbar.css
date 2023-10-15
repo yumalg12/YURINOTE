@@ -33,41 +33,46 @@
 
 .Navbar .MenuSection{
   cursor: pointer;
-  background-image: url(data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2716%27 height=%2716%27 fill=%27currentColor%27 class=%27bi bi-list%27 viewBox=%270 0 16 16%27%3E%3Cpath fill-rule=%27evenodd%27 d=%27M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z%27/%3E%3C/svg%3E);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%234147D5' class='bi bi-list' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z'/%3E%3C/svg%3E");  background-repeat: no-repeat;
   background-repeat: no-repeat;
   background-size: 75%;
   background-position-x: right;
-  transform: translate(5px, 1px); 
+  transform: translate(5px, -1px);
+  background-color: transparent;
+  border: none;
+  height: 1.8rem;
+  background-position-y: 2px;
 }
 
-.Navbar .Menus {
-  z-index: 1;
-  background: var(--light-color-25);
-  text-align: right;
-  padding: 0.4rem 1rem 0.5rem 2rem;
-  width: fit-content;
-  position: absolute;
-  border: 1px solid var(--middle-color);
-  backdrop-filter: blur(4px);
-  transform: translate(calc(100vw - 600px - 2rem), calc(1.7rem + 0px));
+.Menus {
   display: flex;
-  flex-direction: column;
-  box-shadow: 0 5px 10px -5px #ccc;
-  border-radius: 8px;
-  display: none;
+  background: var(--light-color-25);
+  justify-content: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--light-color-13);
+  transition: all 1s ease;
 }
 
-.Navbar .Menus a{
+.Navbar .MenuSection:hover{
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%237890E3' class='bi bi-list' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z'/%3E%3C/svg%3E");  background-repeat: no-repeat;
+}
+
+.Navbar .MenuSection:focus .Menus{
+  border: 1px solid red;
+}
+
+.Menus a{
   color:var(--deep-color);
   text-decoration: none;
   font-size: 0.9em;
 }
 
-.Navbar .Menus span.devider{
+.Menus span.devider{
   color:var(--deep-color);
   font-size: 0.6em;
+  padding-top: 0.4rem;
 }
 
-.Navbar .Menus a:hover{
+.Menus a:hover{
   filter: brightness(120%) saturate(120%);
 }

@@ -35,6 +35,10 @@ export const getIcon = (iconName) => {
             return new URL(
                 "data:image/svg+xml,%3Csvg width='935' height='936' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' overflow='hidden'%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect x='1263' y='81' width='935' height='936'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg clip-path='url(%23clip0)' transform='translate(-1263 -81)'%3E%3Cpath d='M1263 549C1263 290.531 1472.31 81.0001 1730.5 81.0001 1988.69 81.0001 2198 290.531 2198 549 2198 807.469 1988.69 1017 1730.5 1017 1472.31 1017 1263 807.469 1263 549Z' fill='%23D7E0FF' fill-rule='evenodd'/%3E%3Cpath d='M1774.24 386.895 1898.87 511.524 1648.72 761.681 1524.09 637.051Z' fill='%237476FF' fill-rule='evenodd'/%3E%3Cpath d='M1811.95 349.185 1936.58 473.814 1898.87 511.524 1774.24 386.895Z' fill='%23CDCDCD' fill-rule='evenodd'/%3E%3Cpath d='M1869.9 291.238 1994.53 415.868 1936.58 473.814 1811.95 349.185Z' fill='%234057F6' fill-rule='evenodd'/%3E%3Cpath d='M1871.97 289.169C1886.83 274.311 1910.92 274.311 1925.78 289.169L1996.6 359.992C2011.46 374.85 2011.46 398.94 1996.6 413.798L1996.6 413.798C1981.74 428.657 1957.65 428.657 1942.79 413.798L1871.97 342.976C1857.11 328.117 1857.11 304.027 1871.97 289.169Z' fill='%234057F6' fill-rule='evenodd'/%3E%3Cpath d='M0 119.018 88.1263 0 176.253 119.018Z' fill='%23F5E8C7' fill-rule='evenodd' transform='matrix(0.707107 0.707107 0.707107 -0.707107 1439.93 721.209)'/%3E%3Cpath d='M0 31.835 23.572 0 47.1441 31.835Z' fill-rule='evenodd' transform='matrix(0.707107 0.707107 0.707107 -0.707107 1485.58 766.856)'/%3E%3C/g%3E%3C/svg%3E"
             );
+        case "menu":
+            return new URL(
+                "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%237890E3' class='bi bi-list' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z'/%3E%3C/svg%3E"
+            );
         default:
             return null;
     }
