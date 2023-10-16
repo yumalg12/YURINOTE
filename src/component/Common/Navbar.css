@@ -50,6 +50,9 @@
   justify-content: center;
   gap: 0.5rem;
   border-bottom: 1px solid var(--light-color-13);
+}
+
+.Menus.show {
   transition: all 1s ease;
 }
 
@@ -70,7 +73,6 @@
 .Menus span.devider{
   color:var(--deep-color);
   font-size: 0.6em;
-  padding-top: 0.4rem;
 }
 
 .Menus a:hover{

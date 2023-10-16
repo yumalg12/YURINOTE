@@ -95,11 +95,11 @@ function Todo() {
        <div className="Todo">
          <div className="TodoDate">
            <h4>
+             {"Todo List - "}
              <span className="today">
                {getFormattedDate(new Date(), '모월모일모요일')}
              </span>
                <img src={getIcon('calendar')} />
-             의 Todo List
            </h4>
          </div>
          <TodoEditor onCreate={onCreate} />
