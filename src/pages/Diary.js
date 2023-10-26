@@ -17,8 +17,6 @@ const Diary = () => {
     let pivotMonth = pivotDate.getMonth() + 1;
     let today = new Date();
 
-    const headerTitle = `${pivotYear}년 ${pivotMonth}월`;
-
     const onIncreaseMonth = () => {
         if (pivotDate.getFullYear() === today.getFullYear() && pivotDate.getMonth() === today.getMonth()) {
             alert("마지막 페이지입니다.");
