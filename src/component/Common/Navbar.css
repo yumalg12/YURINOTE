@@ -73,6 +73,8 @@
 .Menus span.devider{
   color:var(--deep-color);
   font-size: 0.6em;
+  position: relative;
+  top: 0.4rem;
 }
 
 .Menus a:hover{

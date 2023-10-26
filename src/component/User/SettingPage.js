@@ -4,30 +4,26 @@ import Button from "../Common/Button";
 
 const SettingPage = () => {
   const getNoteObj = () =>
-    JSON.parse(localStorage.getItem("noteList"))[
-      sessionStorage.getItem("currentNote") - 1
-    ];
+    JSON.parse(localStorage.getItem("noteList"))[sessionStorage.getItem("currentNote") - 1];
 
   const [noteInfo, setNoteInfo] = useState(getNoteObj());
-  const [newNoteName, setNewNoteName] = useState(noteInfo.noteName);
 
   const onDelete = () => {
-    setNoteInfo({
-      ...noteInfo,
-      noteName: "No data",
-    });
-    alert("삭제됨");
-  };
-
-  const onNewNoteName = (e) => {
-    setNewNoteName(e.target.value);
+    const updatedNoteList = JSON.parse(localStorage.getItem("noteList"));
+    updatedNoteList[sessionStorage.getItem("currentNote") - 1].noteName = "No data";
+    localStorage.setItem("noteList", JSON.stringify(updatedNoteList));
+    setNoteInfo(getNoteObj());
+    alert("노트가 삭제되었습니다.");
+    window.location.href = "/";
   };
 
   const onSave = () => {
-    setNoteInfo({
-      ...noteInfo,
-      noteName: newNoteName,
-    });
+    const updatedNoteList = JSON.parse(localStorage.getItem("noteList"));
+    updatedNoteList[sessionStorage.getItem("currentNote") - 1].noteName = noteInfo.noteName;
+    localStorage.setItem("noteList", JSON.stringify(updatedNoteList));
+    setNoteInfo(getNoteObj());
+    alert("노트 제목이 변경되었습니다.");
+    window.location.reload();
   };
 
   return (
@@ -35,9 +31,9 @@ const SettingPage = () => {
       <h4>노트 제목 수정</h4>
       <input
         type="text"
-        value={newNoteName}
+        value={noteInfo.noteName}
         maxLength={20}
-        onChange={onNewNoteName}
+        onChange={(e) => setNoteInfo({ ...noteInfo, noteName: e.target.value })}
       />
       <Button value={"저장"} type="" onClick={onSave} />
 
