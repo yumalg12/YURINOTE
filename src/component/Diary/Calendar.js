@@ -50,33 +50,34 @@ const Calendar = ({ year, month, leftChild, rightChild }) => {
 
     return (
         <>
-        <h3>{year}년 {month}월</h3>
-        <div id="Calendar" className="Calendar">
-                        <div className="header_left">{leftChild}</div>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>일</th> <th>월</th> <th>화</th> <th>수</th> <th>목</th>
-                        <th>금</th> <th>토</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {calendarData.map((week, i) => (
-                        <tr key={i}>
-                            {week.map((theDay, j) =>
-                                theDay.day
-                                ? (<td key={j} className={new Date(year, month - 1, theDay.day).toDateString() === today ? "today" : undefined}>{theDay.day}</td>)
-                                : (<td key={j}></td>)
-                            )}
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+        <div className="calendar_wrapper">
+            <div className="header_left">{leftChild}</div>
+            <h3>{year}년 {month}월</h3>
             <div className="header_right">{rightChild}</div>
+            <div id="Calendar" className="Calendar">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>일</th> <th>월</th> <th>화</th> <th>수</th> <th>목</th>
+                            <th>금</th> <th>토</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {calendarData.map((week, i) => (
+                            <tr key={i}>
+                                {week.map((theDay, j) =>
+                                    theDay.day
+                                    ? (<td key={j} className={new Date(year, month - 1, theDay.day).toDateString() === today ? "today" : undefined}>{theDay.day}</td>)
+                                    : (<td key={j}></td>)
+                                )}
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
 
         </div>
-                                </>
+        </>
     );
 };
 

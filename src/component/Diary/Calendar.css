@@ -2,12 +2,17 @@ h3 {
     margin-top: 1.5rem;
 }
 
-div.Calendar {
+.calendar_wrapper{
+    display: grid;
+    grid-template-rows: repeat(6, 1fr); /* 6행으로 나눔 */
+    grid-template-columns: repeat(3, 1fr); /* 3열로 나눔 */
     padding: 0rem 1rem 1rem 1rem;
     border-bottom: 1px solid #eee;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
+}
+
+div.Calendar {
+    grid-row: 2 / 7;
+    grid-column: 2;
 }
 
 .Calendar table {
@@ -57,4 +62,33 @@ div.Calendar {
 
 .Calendar td:empty{
     background-color: #fafafa;
+}
+
+.calendar_wrapper .header_left {
+    grid-row: 4;
+    grid-column: 1;
+}
+.calendar_wrapper .header_right {
+    grid-row: 4;
+    grid-column: 3;
+}
+.calendar_wrapper h3{
+    grid-column: 2;
+    grid-row: 1;
+}
+
+@media (max-width: 600px) {
+    .calendar_wrapper .header_left {
+        grid-row: 1;
+    }
+    .calendar_wrapper .header_right {
+        grid-row: 1;
+    }
+    div.Calendar {
+        grid-column: 1 / 4;
+    }
+    .calendar_wrapper {
+        grid-template-rows: repeat(5, 1fr);
+        align-items: baseline;
+    }
 }
