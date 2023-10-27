@@ -63,6 +63,7 @@ function App() {
         dispatch({
             type: "CREATE",
             data: {
+                note: sessionStorage.getItem('currentNote'),
                 id: idRef.current,
                 date: new Date(date).getTime(),
                 content,
@@ -76,6 +77,7 @@ function App() {
         dispatch({
             type: "UPDATE",
             data: {
+                note: sessionStorage.getItem('currentNote'),
                 id: +targetId,
                 date: new Date(date).getTime(),
                 content,

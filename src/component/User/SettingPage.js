@@ -9,12 +9,20 @@ const SettingPage = () => {
   const [noteInfo, setNoteInfo] = useState(getNoteObj());
 
   const onDelete = () => {
-    const updatedNoteList = JSON.parse(localStorage.getItem("noteList"));
-    updatedNoteList[sessionStorage.getItem("currentNote") - 1].noteName = "No data";
-    localStorage.setItem("noteList", JSON.stringify(updatedNoteList));
-    setNoteInfo(getNoteObj());
-    alert("노트가 삭제되었습니다.");
-    window.location.href = "/";
+    if (window.confirm("현재 노트를 지우시겠습니까? 이 작업은 되돌릴 수 없습니다.")) {
+      const newState = JSON.parse(localStorage.getItem("diary")).filter((e) => String(e.note) !== String(sessionStorage.getItem("currentNote")));
+      localStorage.setItem("diary", JSON.stringify(newState));
+      
+      const updatedNoteList = JSON.parse(localStorage.getItem("noteList"));
+      updatedNoteList[sessionStorage.getItem("currentNote") - 1].noteName = "No data";
+      localStorage.setItem("noteList", JSON.stringify(updatedNoteList));
+      setNoteInfo(getNoteObj());
+
+      sessionStorage.removeItem('currentNote');
+
+      alert("노트가 삭제되었습니다.");
+      window.location.href = "/";
+    }
   };
 
   const onSave = () => {
@@ -28,7 +36,7 @@ const SettingPage = () => {
 
   return (
     <div className="SettingPage">
-      <h4>노트 제목 수정</h4>
+      <h4>노트 이름</h4>
       <input
         type="text"
         value={noteInfo.noteName}

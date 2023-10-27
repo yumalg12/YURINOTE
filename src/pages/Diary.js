@@ -34,7 +34,8 @@ const Diary = () => {
     }
 
     //일기 렌더링
-    const data = useContext(DiaryStateContext);
+    const rawData = useContext(DiaryStateContext);
+    const data = rawData.filter(e=>e.note === sessionStorage.getItem('currentNote'));
     const [filteredData, setFilteredData] = useState([]);
 
     useEffect(() => {
