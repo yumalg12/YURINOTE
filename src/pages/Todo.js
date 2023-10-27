@@ -38,6 +38,8 @@ function Todo() {
       }
       case "CREATE": {
         const newItem = {
+          note: sessionStorage.getItem('currentNote'),
+          category: 'all',
           id: idRef.current,
           content: action.content,
           isDone: false,
@@ -54,7 +56,7 @@ function Todo() {
         localStorage.setItem("todo", JSON.stringify(updatedState));
         return updatedState;
       }
-      case "EDIT": {
+      case "MODIFY": {
         const updatedState = state.map((item) =>
           item.id === action.id ? { ...item, content: action.content } : item
         );
@@ -79,8 +81,9 @@ function Todo() {
      dispatch({ type: "UPDATE", id: targetID });
    };
 
-   const onEdit = (targetID, content) => {
-     dispatch({ type: "EDIT", id: targetID, content });
+   const onModify = (targetID, content) => {
+    alert('onModify');
+     dispatch({ type: "MODIFY", id: targetID, content });
    };
 
    const onDelete = (targetID) => {
@@ -103,7 +106,7 @@ function Todo() {
            </h4>
          </div>
          <TodoEditor onCreate={onCreate} />
-         <TodoList todo={todoList} onUpdate={onUpdate} onDelete={onDelete} onEdit={onEdit} />
+         <TodoList todo={todoList} onUpdate={onUpdate} onDelete={onDelete} onModify={onModify} />
        </div>
      </>
    );
