@@ -42,14 +42,14 @@
 
 @media (max-width: 550px) {
   .NoteSelect {
-    transform: translate(-50%, -38%);
-    height: 155vh;
+    height: auto;
+    transform: translate(-50%, 0);
+    position: relative;
+    padding-bottom: 4rem;
+    margin-bottom: -2rem;
   }
-}
 
-@media (max-width: 420px) {
-  .NoteSelect {
-    transform: translate(-50%, -35%);
-    height: 170vh;
+  .NoteSelect img.logo {
+    padding-top: 1rem;
   }
 }

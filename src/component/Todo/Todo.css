@@ -133,3 +133,9 @@ input[type="checkbox"]:checked.toggle {
   width: 100%;
   margin-left: -1rem;
 }
+
+@media (max-width: 550px) {
+  .TodoItem {
+      padding: 0px 0 10px 0;
+  }
+}

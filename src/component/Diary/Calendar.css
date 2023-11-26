@@ -92,3 +92,9 @@ div.Calendar {
         align-items: baseline;
     }
 }
+
+@media (max-width: 400px) {
+    .calendar_wrapper {
+        padding: 0rem 0rem 1rem 0rem;
+    }
+}
