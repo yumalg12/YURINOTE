@@ -37,44 +37,44 @@ function Todo() {
         return action.data;
       }
       case "CREATE": {
-        const newItem = {
-          note: sessionStorage.getItem('currentNote'),
-          category: 'all',
-          id: idRef.current,
-          content: action.content,
-          isDone: false,
-          createDate: new Date().getTime(),
-        };
-        localStorage.setItem("todo", JSON.stringify([newItem, ...state]));
-        idRef.current += 1;
-        return [newItem, ...state];
+        const newState = [action.data, ...state];
+        localStorage.setItem("todo", JSON.stringify(newState));
+        return newState;
       }
       case "UPDATE": {
-        const updatedState = state.map((item) =>
-          item.id === action.id ? { ...item, isDone: !item.isDone } : item
-        );
-        localStorage.setItem("todo", JSON.stringify(updatedState));
-        return updatedState;
+        const newState = state.map((e) => (String(e.id) === String(action.id) ? { ...e, isDone: !e.isDone } : e));
+        localStorage.setItem("todo", JSON.stringify(newState));
+        return newState;
       }
       case "MODIFY": {
-        const updatedState = state.map((item) =>
-          item.id === action.id ? { ...item, content: action.content } : item
-        );
-        localStorage.setItem("todo", JSON.stringify(updatedState));
-        return updatedState;
+        const newState = state.map((e) => (String(e.id) === String(action.id)) ? { ...e, content: action.content } : e);
+        localStorage.setItem("todo", JSON.stringify(newState));
+        return newState;
       }
       case "DELETE": {
-         const newState = state.filter(e => String(e.id) !== String(action.id));
-         localStorage.setItem("todo", JSON.stringify(newState));
-         return newState;
-       }
-       default:
-         return state;
-     }
-   }
+        const newState = state.filter((e) => String(e.id) !== String(action.targetId));
+        localStorage.setItem("todo", JSON.stringify(newState));
+        return newState;
+      }
+      default:
+        return state;
+    }
+  }
+  
 
-   const onCreate = (content) => {
-     dispatch({ type: "CREATE", content });
+  const onCreate = (content) => {
+    dispatch({
+        type: "CREATE",
+        data: {
+            note: sessionStorage.getItem('currentNote'),
+            category: 'all',
+            id: idRef.current,
+            content,
+            isDone: false,
+            createDate: new Date().getTime(),
+        },
+    });
+    idRef.current += 1;
    };
 
    const onUpdate = (targetID) => {
@@ -82,7 +82,7 @@ function Todo() {
    };
 
    const onModify = (targetID, content) => {
-    alert('onModify');
+    alert(targetID,content);
      dispatch({ type: "MODIFY", id: targetID, content });
    };
 
@@ -106,7 +106,7 @@ function Todo() {
            </h4>
          </div>
          <TodoEditor onCreate={onCreate} />
-         <TodoList todo={todoList} onUpdate={onUpdate} onDelete={onDelete} onModify={onModify} />
+         <TodoList todo={todoList.filter(e=>e.note === sessionStorage.getItem('currentNote'))} onUpdate={onUpdate} onDelete={onDelete} onModify={onModify} />
        </div>
      </>
    );
