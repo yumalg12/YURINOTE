@@ -82,7 +82,6 @@ function Todo() {
    };
 
    const onModify = (targetID, content) => {
-    alert(targetID,content);
      dispatch({ type: "MODIFY", id: targetID, content });
    };
 

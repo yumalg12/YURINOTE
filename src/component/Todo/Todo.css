@@ -130,5 +130,6 @@ input[type="checkbox"]:checked.toggle {
 }
 
 .TodoItem .todo_content.modify input {
-  width: calc(100% - 1rem);
+  width: 100%;
+  margin-left: -1rem;
 }
