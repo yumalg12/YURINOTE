@@ -52,7 +52,7 @@ function Todo() {
         return newState;
       }
       case "DELETE": {
-        const newState = state.filter((e) => String(e.id) !== String(action.targetId));
+        const newState = state.filter((e) => String(e.id) !== String(action.id));
         localStorage.setItem("todo", JSON.stringify(newState));
         return newState;
       }
