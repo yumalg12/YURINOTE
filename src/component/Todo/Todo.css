@@ -125,7 +125,7 @@ input[type="checkbox"]:checked.toggle {
   align-items: center;
 }
 
-.TodoItem .todo_content.modify {
+.TodoItem .todo_content.hidden {
   display: none;
 }
 
